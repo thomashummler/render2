@@ -1,0 +1,21 @@
+<div class="overview-container">
+  <% events.forEach(function(event){ %>
+  <div>
+    <div class="overviewName"><%= event.name %></div>
+    <div class="overviewImg">
+      <img class="overviewPartyImage" src="/images/party_image.jpg" />
+    </div>
+    <div class="overviewData">Datum: <%= event.date %></div>
+    <div class="overviewData">Ort: <%= event.stadt %></div>
+    <br>
+    <div class="overviewButtons">
+        <form class="overiewForm" action="/event/<%=event.id%>">
+            <input class="overviewInput" type="submit" value="Details" />
+        </form>
+        <form class="overiewForm" action="/event/<%=event.id%>">
+            <input class="overviewInput"type="submit" value="Promote" />
+        </form>
+    </div>
+  </div>
+  <% }); %>
+</div>

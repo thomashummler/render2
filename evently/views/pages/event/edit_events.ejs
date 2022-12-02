@@ -1,0 +1,18 @@
+<div class="homepage-columnflex-container">
+    <div class="create-events-container">
+        <form action="/event/<%=event.id%>/update" method="post">
+            <h1>Event bearbeiten</h1>
+            <div class="input-container">
+                <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                <input type="text" placeholder="Name" name="name" />
+                <input type="text" placeholder="Beschreibung " name="beschreibung" />
+                <input type="text" placeholder="Stadt" name="stadt" />
+                <input type="number" placeholder="PLZ" name="plz" />
+                <input type="text" placeholder="Straße" name="straße" />
+                <input type="number" placeholder="Hausnummer" name="hausnummer" />
+                <input type="date" placeholder="Datum des Events" name="date" />
+                <button type="submit" class="submit-button">Hinzufügen</button>
+            </div>
+        </form>
+    </div>
+</div>
