@@ -14,7 +14,7 @@ body {
 header {
   background-color: var(--dark-color);
   position: fixed;
-  height: 130px;
+  height: s;
   top: 0px;
   right: 0px;
   width: 100%;
@@ -134,7 +134,7 @@ header {
 .dropdown-content {
   margin-top: 40px;
   display: none;
-  position: absolute;
+  position: relative;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -153,6 +153,10 @@ header {
 }
 
 .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content:hover {
   display: block;
 }
 
@@ -363,6 +367,16 @@ h1 {
   text-align: center;
   justify-content: center;
 }
+
+.login{
+      position: absolute;
+      width:100%;
+      top:130px;
+      height: 100%;
+}
+
+
+
 
 /************ SEARCHBAR **********/
 
@@ -579,6 +593,35 @@ h1 {
   padding-top: 50px;
 }
 
+.welcome-columnflex-container{
+  position: fixed;
+  top:130px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.button-block{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  gap: 30px;
+}
+.button-block button{
+  position: relative;
+    width: 120px;
+    height: 70px;
+
+}
+
+.button-block button:hover{
+    background-color: var(--aqua-color);
+  
+}
+
+
+
 
 
 @media only screen and (min-width: 600px) {
@@ -704,9 +747,7 @@ h1 {
     padding-top: 30px;
   }
 
-  .buttons-show-events {
-    padding-top: 50px;
-  }
+
 
 
 

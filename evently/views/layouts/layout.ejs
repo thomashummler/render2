@@ -95,9 +95,12 @@
             <div class="dropdown">
               <button class="dropbtn"></button>
               <div class="dropdown-content">
+              <% if(me) { %>
+              <a href="/logout">Ausloggen</a>
+              <% } else { %>
               <a href="/login">Einloggen</a>
               <a href="/signup">Registrieren</a>
-              <a href="/logout">Ausloggen</a>
+              <% } %>
               </div>
             </div> 
            </div>
