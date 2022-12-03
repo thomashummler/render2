@@ -88,16 +88,19 @@
           </div>
               <form action = "/event" class="search-box"">
                 <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
-                <input type="text" class="input-search" placeholder="Suche deine Veranstaltung . . ." name="q">
+                <input type="text" class="input-search" placeholder="Suche deine Veranstaltung . . ." name="name">
               </form>
           
           <div class="header-userinfo">
             <div class="dropdown">
               <button class="dropbtn"></button>
               <div class="dropdown-content">
+              <% if(me) { %>
+              <a href="/logout">Ausloggen</a>
+              <% } else { %>
               <a href="/login">Einloggen</a>
               <a href="/signup">Registrieren</a>
-              <a href="/logout">Ausloggen</a>
+              <% } %>
               </div>
             </div> 
            </div>

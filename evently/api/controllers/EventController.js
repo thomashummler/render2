@@ -25,10 +25,10 @@ module.exports = {
   find: async function (req, res) {
     sails.log.debug("List all Events....")
     let events;
-    if (req.query.q && req.query.q.length > 0) {
+    if (req.query.name && req.query.name.length > 0) {
       events = await Event.find({
         name: {
-          'contains': req.query.q
+          'contains': req.query.name
         }
       })
     } else {
