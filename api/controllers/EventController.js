@@ -10,17 +10,7 @@ const Sails = require("sails/lib/app/Sails");
 
 module.exports = {
 
-  createWithImageStep1: async function (req, res) {
-    sails.log.debug("Create event....")
-    req.session.name = req.body.name,
-    req.session.beschreibung = req.body.beschreibung,
-    req.session.stadt = req.body.stadt,
-    req.session.plz = req.body.plz,
-    req.session.straße = req.body.straße,
-    req.session.hausnummer = req.body.hausnummer,
-    req.session.date= req.body.date
-    res.view('pages/event/newWithImageForm2', { eventName: req.param("name") })
-  },
+
 
   /**
    * Uploads an image for a meal.
@@ -44,13 +34,13 @@ module.exports = {
       let fname = require('path').basename(uploadedFiles[0].fd);
       await Event.create({
         "image": fname,
-        "name": req.session.name,
-        "beschreibung": req.session.beschreibung,
-        "stadt": req.session.stadt,
-        "plz": req.session.plz,
-        "straße": req.session.straße,
-        "hausnummer": req.session.hausnummer,
-        "date": req.session.date
+        "name": req.body.name,
+        "beschreibung": req.body.beschreibung,
+        "stadt": req.body.stadt,
+        "plz": req.body.plz,
+        "straße": req.body.straße,
+        "hausnummer": req.body.hausnummer,
+        "date": req.body.date
       })
     };
 

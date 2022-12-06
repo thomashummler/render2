@@ -1,6 +1,6 @@
 <div class="homepage-columnflex-container">
     <div class="create-events-container">
-        <form action="/eventWithImage" method="post" class="create-form" >
+        <form action="/eventWithImage2" method="post" class="create-form" enctype="multipart/form-data" >
             <h1>Event erstellen</h1>
             <div class="input-container">
                 <input type="hidden" name="_csrf" value="<%= _csrf %>" />
@@ -11,7 +11,7 @@
                 <input type="text" placeholder="Straße" name="straße" />
                 <input type="number" placeholder="Hausnummer" name="hausnummer" />
                 <input type="date" placeholder="Datum des Events" name="date" />
-                
+                <input type="file" class="form-control" name="image">
                 <button type="submit" class="submit-button">Hinzufügen</button>
             </div>
         </form>
