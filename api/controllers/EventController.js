@@ -10,6 +10,57 @@ const Sails = require("sails/lib/app/Sails");
 
 module.exports = {
 
+  createWithImageStep1: async function (req, res) {
+    sails.log.debug("Create event....")
+    req.session.name = req.body.name,
+    req.session.beschreibung = req.body.beschreibung,
+    req.session.stadt = req.body.stadt,
+    req.session.plz = req.body.plz,
+    req.session.straße = req.body.straße,
+    req.session.hausnummer = req.body.hausnummer,
+    req.session.date= req.body.date
+    res.view('pages/event/newWithImageForm2', { eventName: req.param("name") })
+  },
+
+  /**
+   * Uploads an image for a meal.
+   * The image is stored in the /assets/images/meals directory and the path to the image 
+   * in the database table of meals. 
+   */
+  createWithImageStep2: async function (req, res) {
+    sails.log("Upload image for meal...")
+    // Define the parameters of the upload as an object
+    // In this example only the path, wehre to upload the image, is set
+    let params = {
+      dirname: require('path').resolve(sails.config.appPath, 'assets/images/events/')
+    };
+
+    let callback = async function (err, uploadedFiles) {
+      if (err) {
+        return res.serverError(err);
+      } else {
+        sails.log("Uploaded!")
+      }
+      let fname = require('path').basename(uploadedFiles[0].fd);
+      await Event.create({
+        "image": fname,
+        "name": req.session.name,
+        "beschreibung": req.session.beschreibung,
+        "stadt": req.session.stadt,
+        "plz": req.session.plz,
+        "straße": req.session.straße,
+        "hausnummer": req.session.hausnummer,
+        "date": req.session.date
+      })
+    };
+
+      // This funvtion is called, once all files are uploaded
+      // err indicates if the upload process triggered an error and has been aborted 
+      // uploaded files contains an array of the files which have been uploaded, in our case only one.
+      await req.file('image').upload(params, callback);
+      return res.redirect('/event');
+    },
+
   create: async function (req, res) {
     sails.log.debug("Create new event....");
     let params = req.allParams();
@@ -22,6 +73,7 @@ module.exports = {
       res.redirect("/");
     }
   },
+
   find: async function (req, res) {
     sails.log.debug("List all Events....")
     let events;
