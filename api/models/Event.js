@@ -15,11 +15,9 @@ module.exports = {
         type: "string",
         isIn: ["Sport", "Musik", "Kultur", "Clubs"],
     },
+    owner: {
+        model: 'user'
+    },
   },
-  /*
-        owner: {
-            model: 'user'
-        },
-    
-        */
+
 };
