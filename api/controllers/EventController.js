@@ -41,8 +41,8 @@ module.exports = {
         "straße": req.body.straße,
         "hausnummer": req.body.hausnummer,
         "date": req.body.date,
-        "private": req.body.private
-
+        "private": req.body.private,
+        "owner": req.me.id,
       })
     };
 
