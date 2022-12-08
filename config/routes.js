@@ -28,8 +28,7 @@ module.exports.routes = {
   'GET /event/:id/destroy': { controller: 'EventController', action: 'destroyOne' },
   'POST /event/step2': {controller: 'EventController',action: 'step2'},
   'GET /event/commit': {controller: 'EventController',action: 'commit'},
-  'POST /eventWithImage': { controller: 'EventController', action:'createWithImageStep1' },
-  'POST /eventWithImage2': { controller: 'EventController', action:'createWithImageStep2' },
+  'POST /eventWithImage': { controller: 'EventController', action:'createWithImage' },
 
 
   'GET /faq':                { action:   'view-faq' },

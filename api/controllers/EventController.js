@@ -17,7 +17,7 @@ module.exports = {
    * The image is stored in the /assets/images/meals directory and the path to the image 
    * in the database table of meals. 
    */
-  createWithImageStep2: async function (req, res) {
+  createWithImage: async function (req, res) {
     sails.log("Upload image for meal...")
     // Define the parameters of the upload as an object
     // In this example only the path, wehre to upload the image, is set
@@ -40,7 +40,9 @@ module.exports = {
         "plz": req.body.plz,
         "straße": req.body.straße,
         "hausnummer": req.body.hausnummer,
-        "date": req.body.date
+        "date": req.body.date,
+        "private": req.body.private
+
       })
     };
 
