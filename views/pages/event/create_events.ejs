@@ -16,9 +16,16 @@
         <input type="text" placeholder="Straße" name="straße" />
         <input type="number" placeholder="Hausnummer" name="hausnummer" />
         <input type="date" placeholder="Datum des Events" name="date" />
-        <input type="file" class="form-control" name="image" />
         <input type="checkbox" class="checkbox" name="private" />
         <label for="private"> Meine Event soll Privat sein</label><br />
+        <label for="category">Such dir eine Kategorie aus falls du möchtest:</label>
+        <select type="text" name="category">
+          <option value="Sport">Sport</option>
+          <option value="Musik">Musik</option>
+          <option value="Kultur">Kultur</option>
+          <option value="Weiteres">Weiteres</option>
+        </select>
+        <input type="file" class="form-control" name="image" />
         <button type="submit" class="submit-button">Hinzufügen</button>
       </div>
     </form>

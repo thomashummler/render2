@@ -333,7 +333,7 @@ h1 {
 
 .overview-container {
   background-color: var(--grey-color);
-  overflow: auto;
+  overflow: visible;
   position: fixed;
   top: 150px;
   width: 100%;

@@ -1,26 +1,63 @@
-
 <section class="main">
-  <div>1
+  <div>
+    1
     <p>Klickne sie hier um ihre Veranstaltung zu erstellen</p>
-    <a class="event-button" href="/event"><button>Veranstaltung <br/> anschauen</button></a>
+    <a class="event-button" href="/event"
+      ><button>
+        Veranstaltung <br />
+        anschauen
+      </button></a
+    >
   </div>
   <div>
     <div class="grid-container">
-      
-      <a class="event-button" href="/event"><button>Veranstaltung anschauen</button></a>
+      <a class="event-button" href="/event/create_events"
+        ><button>Veranstaltung erstellen</button></a
+      >
     </div>
   </div>
-  <div>3
-    <p>Klickne sie hier um ihre Veranstaltung zu erstellen</p>
-    <a class="event-button" href="/event"><button>Veranstaltung <br/> anschauen</button></a>
+  <div>
+    <form action="/event/findByCategory">
+      <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+      <input
+        type="submit"
+        placeholder="Suche deine Veranstaltung . . ."
+        name="category"
+        value="Musik"
+      />
+    </form>
   </div>
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>
-  <div>7</div>
-  <div>8</div>
-  <div>9
+  <div>    
+    <form action="/event/findByCategory">
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+    <input
+      type="submit"
+      placeholder="Suche deine Veranstaltung . . ."
+      name="category"
+      value="Sport"
+    />
+  </form>
+</div>
+  <div>    
+    <form action="/event/findByCategory">
+    <input
+      type="submit"
+      placeholder="Suche deine Veranstaltung . . ."
+      name="category"
+      value="Kultur"
+    />
+    </form>
   </div>
+  <div> 
+    <form action="/event/findByCategory">
+    <input
+      type="submit"
+      placeholder="Suche deine Veranstaltung . . ."
+      name="category"
+      value="Weiteres"
+    />
+  </div>
+  <div>9</div>
   <div>10</div>
   <div>11</div>
   <div>12</div>

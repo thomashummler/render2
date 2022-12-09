@@ -21,14 +21,12 @@ module.exports.routes = {
   'GET /event': { controller: 'EventController', action: 'find' },
   'GET /event/create_events': { view:'pages/event/create_events'},
   'GET /event/own_events': { controller: 'EventController', action: 'findOwnEvents'},
-
+  'GET /event/findByCategory': { controller: 'EventController', action: 'findEventsByCategory'},
 
   'GET /event/:id': { controller: 'EventController', action: 'findOne' },
   'GET /event/:id/edit': { controller: 'EventController', action: 'editOne' },
   'POST /event/:id/update': { controller: 'EventController', action: 'updateOne' },
   'GET /event/:id/destroy': { controller: 'EventController', action: 'destroyOne' },
-  'POST /event/step2': {controller: 'EventController',action: 'step2'},
-  'GET /event/commit': {controller: 'EventController',action: 'commit'},
   'POST /eventWithImage': { controller: 'EventController', action:'createWithImage' },
 
 

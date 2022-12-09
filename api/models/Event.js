@@ -13,7 +13,8 @@ module.exports = {
     private: { type: "boolean" },
     category: {
       type: "string",
-      isIn: ["Sport", "Musik", "Kultur", "Clubs"],
+      columnType: "varchar(80)",
+      isIn: ["Sport", "Musik", "Kultur", "Weiteres"],
     },
     owner: {
       type: "string",
