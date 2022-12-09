@@ -10,14 +10,14 @@ module.exports = {
     likesanzahl: { type: "number", required: false },
     date: { type: "string", required: true },
     image: { type: "string", columnType: "varchar(128)" },
-    private: {  type: "boolean" },
+    private: { type: "boolean" },
     category: {
-        type: "string",
-        isIn: ["Sport", "Musik", "Kultur", "Clubs"],
+      type: "string",
+      isIn: ["Sport", "Musik", "Kultur", "Clubs"],
     },
     owner: {
-        model: 'user'
+      type: "string",
+      columnType: "varchar(128)",
     },
   },
-
 };

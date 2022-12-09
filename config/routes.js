@@ -20,6 +20,7 @@ module.exports.routes = {
   'POST /event': { controller: 'EventController', action:'create' },
   'GET /event': { controller: 'EventController', action: 'find' },
   'GET /event/create_events': { view:'pages/event/create_events'},
+  'GET /event/own_events': { controller: 'EventController', action: 'findOwnEvents'},
 
 
   'GET /event/:id': { controller: 'EventController', action: 'findOne' },
