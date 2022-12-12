@@ -24,7 +24,9 @@ module.exports.routes = {
   'GET /event/findByCategory': { controller: 'EventController', action: 'findEventsByCategory'},
 
   'GET /event/:id': { controller: 'EventController', action: 'findOne' },
+  'GET /event/promote/:id': { controller: 'EventController', action: 'findCategoryPage' },
   'GET /event/:id/edit': { controller: 'EventController', action: 'editOne' },
+  'POST /event/:id/promote': { controller: 'EventController', action: 'updatePromotion' },
   'POST /event/:id/update': { controller: 'EventController', action: 'updateOne' },
   'GET /event/:id/destroy': { controller: 'EventController', action: 'destroyOne' },
   'POST /eventWithImage': { controller: 'EventController', action:'createWithImage' },

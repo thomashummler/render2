@@ -480,7 +480,17 @@ h1 {
   color: white;
 
 }
-
+.promote-columnflex-container{
+  position: fixed;
+  top:150px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  color: var(--dark-color));
+  background-color: var(--grey-color);
+}
 
 
 /********** SIDEBAR ***********/
