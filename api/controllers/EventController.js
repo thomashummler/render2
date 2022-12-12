@@ -4,10 +4,18 @@
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
+const { event } = require("grunt");
 const redactPasswords = require("sails-mysql/lib/private/redact-passwords");
 const Sails = require("sails/lib/app/Sails");
 
 module.exports = {
+  updatePromotion: async function (req, res) {
+    let event = await Event.updateOne({ id: req.params.id }).set(
+      req.body.promotionStatus
+    );
+    res.redirect("/event");
+  },
+
   findEventsByCategory: async function (req, res) {
     let events;
     let params = req.allParams();
@@ -87,6 +95,18 @@ module.exports = {
         private: false,
       });
     }
+
+    for (let i = 0; i < events.length; i++) {
+      if (events[i].promotionStatus && events[i].promotionStatus == 1) {
+        newArray = [];
+        newArray.push(event[i]);
+        events.slice(i + 1);
+        for (let id = 0; id < events.length; id++) {
+          newArray.push(event[i]);
+        }
+        events = newArray;
+      }
+    }
     events;
     res.view("pages/event/overview_events", { events: events });
   },
@@ -94,12 +114,25 @@ module.exports = {
   findOne: async function (req, res) {
     sails.log.debug("List single event....");
     let event = await Event.findOne({ id: req.params.id });
-    if(req.me.id == event.owner){
-    res.view("pages/event/show_event", { event: event });
-    } else {
-      res.view("pages/event/show_eventDetail_without_buttons", { event: event });
-    }
-  },
+    
+      if (req.me.id == event.owner) {
+        res.view("pages/event/show_event", { event: event });
+      } else {
+        res.view("pages/event/show_eventDetail_without_buttons", {
+          event: event,
+        });
+      }
+    },
+
+    findCategoryPage : async function(req, res) {
+        sails.log.debug("finding Promotion Site with Event");
+        let event = await Event.findOne({ id: req.params.id });
+        if (req.me.id == event.owner) {
+          res.view("pages/event/event_promotion_overview", { event: event });
+        } else {
+          res.redirect("/event");
+        } 
+    },
 
   editOne: async function (req, res) {
     sails.log.debug("Edit single meal....");

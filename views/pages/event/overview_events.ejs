@@ -18,10 +18,10 @@
       <br>
       <div class="overviewButtons">
         <form class="overiewForm" action="/event/<%=event.id%>">
-          <input class="overviewInput" type="submit" value="Details" />
+          <input class="overviewInput" type="submit" value="Details" name="detail"/>
         </form>
-        <form class="overiewForm" action="/event/<%=event.id%>">
-          <input class="overviewInput" type="submit" value="Promote" />
+        <form class="overiewForm" action="/event/promote/<%=event.id%>">
+          <input class="overviewInput" type="submit" value="Promote" name="detail "/>
         </form>
       </div>
     </div>

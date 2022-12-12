@@ -20,5 +20,10 @@ module.exports = {
       type: "string",
       columnType: "varchar(128)",
     },
+    promotionStatus:{
+      type: "number",
+      isIn: [0,1,2,3],
+      required: false
+    }
   },
 };
