@@ -10,10 +10,14 @@ const Sails = require("sails/lib/app/Sails");
 
 module.exports = {
   updatePromotion: async function (req, res) {
-    let event = await Event.updateOne({ id: req.params.id }).set(
-      req.body.promotionStatus
-    );
-    res.redirect("/event");
+    let event = await Event.updateOne({ id: req.params.id }).set(req.body);
+    events = await Event.find({
+      owner: {
+        contains: req.me.id,
+      },
+    });
+    events.sort((x, y) => y.promotionStatus - x.promotionStatus);
+    res.view("pages/event/overview_own_events", { events: events });
   },
 
   findEventsByCategory: async function (req, res) {
@@ -36,7 +40,7 @@ module.exports = {
       },
     });
     events;
-    res.view("pages/event/overview_events", { events: events });
+    res.view("pages/event/overview_own_events", { events: events });
   },
 
   createWithImage: async function (req, res) {
@@ -96,43 +100,37 @@ module.exports = {
       });
     }
 
-    for (let i = 0; i < events.length; i++) {
-      if (events[i].promotionStatus && events[i].promotionStatus == 1) {
-        newArray = [];
-        newArray.push(event[i]);
-        events.slice(i + 1);
-        for (let id = 0; id < events.length; id++) {
-          newArray.push(event[i]);
-        }
-        events = newArray;
-      }
-    }
+    events.sort((x, y) => y.promotionStatus - x.promotionStatus);
+    
     events;
-    res.view("pages/event/overview_events", { events: events });
+    
+
+    
+    res.view("pages/event/overview_events", { events: events  });
   },
 
   findOne: async function (req, res) {
     sails.log.debug("List single event....");
     let event = await Event.findOne({ id: req.params.id });
-    
-      if (req.me.id == event.owner) {
-        res.view("pages/event/show_event", { event: event });
-      } else {
-        res.view("pages/event/show_eventDetail_without_buttons", {
-          event: event,
-        });
-      }
-    },
 
-    findCategoryPage : async function(req, res) {
-        sails.log.debug("finding Promotion Site with Event");
-        let event = await Event.findOne({ id: req.params.id });
-        if (req.me.id == event.owner) {
-          res.view("pages/event/event_promotion_overview", { event: event });
-        } else {
-          res.redirect("/event");
-        } 
-    },
+    if (req.me.id == event.owner) {
+      res.view("pages/event/show_event", { event: event });
+    } else {
+      res.view("pages/event/show_eventDetail_without_buttons", {
+        event: event,
+      });
+    }
+  },
+
+  findCategoryPage: async function (req, res) {
+    sails.log.debug("finding Promotion Site with Event");
+    let event = await Event.findOne({ id: req.params.id });
+    if (req.me.id == event.owner) {
+      res.view("pages/event/event_promotion_overview", { event: event });
+    } else {
+      res.redirect("/event");
+    }
+  },
 
   editOne: async function (req, res) {
     sails.log.debug("Edit single meal....");

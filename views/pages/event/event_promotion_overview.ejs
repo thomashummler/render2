@@ -1,28 +1,18 @@
-<div class="homepage-columnflex-container">
+<div class="promote-columnflex-container">
 
-<div>
-    Promotion Status: <%= /event/<%=event.id%>/promote %>
-</div>
+  <div>
+    Promotion Status: <%= event.promotionStatus %>
+  </div>
 
-<div>
-    <form
-    action="/event/:id/promote"
-    method="post"
-    class="create-form"
-   
-  >
-  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-
-    <select type="text" name="category">
-        <option value="Sport">1</option>
-        <option value="Musik">2</option>
-        <option value="Kultur">3</option>
-        <option value="Weiteres">4</option>
+  <div>
+    <form action="/event/<%= event.id %>/promote" method="post" class="create-form">
+      <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+      <select type="text" name="promotionStatus">
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
       </select>
-
-
-  
-       
-
-</div>
+      <button type="submit" class="submit-button">Hinzufügen</button>
+  </div>
 </div>
