@@ -11,26 +11,32 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
-
+.plaincontainer {
+  padding-top: 170px;
+}
 
 /********* GRID LAYOUT *************/ 
 
 .grid-container431 {
-  padding-top: 140px !important;
+  padding-top: 160px !important;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
-  padding: 10px;
+  padding: 20px 40px;
+  color: var(--dark-color);
+  font-size: 22px;
 }
 
-.grid-container431 div {
-  padding: 10px;
-  border: 1px solid red;
-  min-height: 200px;
-  text-align: center;
+.grid-item431 {
+  background-color: white;
+  margin-bottom: 20px;
+  font-size: 16px;
+  padding-bottom: 20px;
+  color: var(--dark-color);
 }
 
 .grid-container21 {
+  text-align: center;
   padding-top: 140px !important;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -38,12 +44,23 @@ body {
   padding: 10px;
 }
 
-.grid-container21 div {
-  padding: 10px;
-  border: 1px solid red;
-  min-height: 200px;
-  text-align: center;
+
+
+.grid-item21 {
+  justify-items: center;
+  padding:20px 30px;
+  background-color: white;
+  margin-bottom: 20px;
+  font-size: 16px;
+  padding-bottom: 20px;
+  color: var(--dark-color);
 }
+
+.grid-item21 p{
+  font-size: 16px;
+  padding:10px 30px;
+}
+
 
 
 /********* HEADER ********************/ 
@@ -127,7 +144,7 @@ header {
   position: absolute;
   display: none;
   background-color: var(--dark-color);
-  min-width: 160px;
+  min-width: 170px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   right: 0;
@@ -138,6 +155,7 @@ header {
 .dropdown-content a {
   color: white;
   font-size: 20px;
+  font-family: 'Rubik', sans-serif;
   padding: 20px 16px;
   text-decoration: none;
   display: block;
@@ -279,11 +297,11 @@ header {
 
 
 .create-events-container {
+  padding-top: 170px;
   width: 100%;
-  top: 130px;
+  top: 100px;
   justify-content: center;
   display: flex;
-  padding: 200px 40px 40px 80px;
 }
 
 
@@ -291,7 +309,7 @@ header {
 
 .create-form {
   height: auto;
-  width: auto;
+  width: 100%;
   padding: 40px;
   padding-top: 10px;
   border-radius: 8px;
@@ -303,15 +321,26 @@ header {
   border-radius: 10px;
 }
 
+.create-form h1{
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.create-form input{
+  height: 40px;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.form-control input{
+  height: 100px !important;
 }
 
 .create-events-container input {
-  height: 64px;
   width: auto;
   margin: 15px;
   padding: 0px 25px;
@@ -364,7 +393,8 @@ h1 {
 }
 
 .overviewPartyImage {
-  position: relative;
+  padding: 0px 5px;
+  /*position: relative;*/ /* IMAGE*/
   height: 200px;
   width: 100%;
 }
@@ -375,6 +405,14 @@ h1 {
   font-size: larger;
   font-weight: bold;
   color: var(--white-color);
+}
+
+.overviewOwnName {
+  padding-left: 10px;
+  height: 50px;
+  font-size: 18px;
+  padding-top: 12px;
+  color: var(--dark-color);
 }
 
 .overviewData {
@@ -393,6 +431,27 @@ h1 {
   gap: 30px;
   justify-content: center;
 }
+
+.overviewOwnButtons {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.overviewOwnButtons input{
+
+  text-align: center;
+  font-size: 14px;
+  background-color: var(--aqua-color);
+  border: none;
+  color: var(--dark-color);
+  width: 100px;
+}
+
+
+
 
 .overiewForm {
   position: relative;
@@ -446,6 +505,7 @@ h1 {
   padding: 12px 10px;
   margin: 12px 0;
   font-size: 14px;
+  background-color: white;
   font-family: 'Rubik', sans-serif;
   box-sizing: border-box;
   border: none;
@@ -598,6 +658,11 @@ h1 {
   color: white;
 }
 
+#menu li:hover {
+  color: var(--dark-color);
+  background-color: var(--aqua-color);
+}
+
 
 
 #menuToggle input:checked~ul {
@@ -651,8 +716,8 @@ h1 {
   .homepage-columnflex-container div {
     text-align: center;
     padding-bottom: 40px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .event-overview {
@@ -691,9 +756,10 @@ h1 {
   height: 200px;
   background-color: var(--grey-color);
   width: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
-  height: 100%
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100%;
+  margin-bottom: 200px;
 }
 
 .grid-container-show p{
@@ -732,6 +798,13 @@ h1 {
 .btn-secondary {
   color: var(--dark-color);
   background-color: var(--grey-color);
+}
+
+
+.showPartyImage {
+  padding: 0px 0px 40px 3px;
+  height: auto;
+  width: 100%;
 }
 
 
@@ -822,6 +895,10 @@ footer div:hover {
       
     }
 
+    .dropdown-content {
+      min-width: 200px;
+    }
+
     #menuToggle {
       left: 50px;
       top: 49px;
@@ -841,6 +918,28 @@ footer div:hover {
       width: 45px;
       margin-top: 42px;
       margin-bottom: 42px;
+    }
+
+    .create-events-container {
+      width: 100%;
+      top: 130px;
+      justify-content: center;
+      display: flex;
+      padding: 200px 40px 40px 80px;
+    }
+
+    .create-form {
+      width: auto;
+    }
+
+    .create-events-container input {
+      width: auto;
+      margin: 15px;
+      padding: 0px 25px;
+      border-radius: 10px;
+      border: none;
+      background-color: var(--grey-color);
+      transition: 0.2s;
     }
 
 }
@@ -874,12 +973,22 @@ footer div:hover {
     padding-top: 10px;
     height: 30px;
   }
+
+  .grid-container-show {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .grid-item21 p{
+    font-size: 22px;
+  }
 }
 
 
 
 
 @media (min-width: 1024px) {
+
     .grid-container431 {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -888,8 +997,18 @@ footer div:hover {
       grid-template-columns: repeat(2, 1fr);
   }
 
+  .grid-item21 {
+    height: 400px;
+}
+
+
   #menu {
     width: 300px;
+  }
+
+  
+  .dropdown-content {
+    min-width: 250px;
   }
 
   .logo-header {
@@ -907,6 +1026,12 @@ footer div:hover {
   .logo-header {
     padding-top: 0px;
     height: 40px;
+  }
+
+  .overviewOwnButtons input{
+    width: 120px;
+    height: 40px;
+    font-size: 18px;
   }
 
 }
@@ -927,6 +1052,11 @@ footer div:hover {
     margin-top: 36px;
     margin-bottom: 36px;
   }
+
+  .grid-container-show {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
 }
 
 
@@ -943,6 +1073,11 @@ footer div:hover {
 #menu {
   width: 350px;
   
+}
+
+
+.dropdown-content {
+  min-width: 300px;
 }
 
 .input-search {

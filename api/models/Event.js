@@ -20,7 +20,7 @@ module.exports = {
     owner: {
       type: "string",
       columnType: "varchar(128)",
-      unique: true,
+      unique: false,
       required:true
     },
     promotionStatus: {
