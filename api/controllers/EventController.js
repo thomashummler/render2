@@ -133,19 +133,19 @@ module.exports = {
   },
 
   editOne: async function (req, res) {
-    sails.log.debug("Edit single meal....");
+    sails.log.debug("Edit single Event....");
     let event = await Event.findOne({ id: req.params.id });
     res.view("pages/event/edit_events", { event: event });
   },
 
   updateOne: async function (req, res) {
-    sails.log.debug("Update single event....");
+    sails.log.debug("Update single Event....");
     let event = await Event.updateOne({ id: req.params.id }).set(req.body);
     res.redirect("/event");
   },
 
   destroyOne: async function (req, res) {
-    sails.log.debug("Destroy single event....");
+    sails.log.debug("Destroy single Event....");
     await Event.destroyOne({ id: req.params.id });
     res.redirect("/event");
   },
