@@ -176,6 +176,15 @@
     function closeNav() {
       document.getElementById("eventSidebar").style.width = "0";
     }
+
+    var dropdown = document.getElementsByClassName("dropdown-content");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("show");
+    });
+  }
     </script>
     
     <%/* Stripe.js */%>

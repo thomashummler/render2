@@ -62,22 +62,23 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: var(--dark-color);
-  align-items: center;
   min-height: 130px;
+  align-items: center;
   max-height: 130px;
   position: fixed;
+  padding-top: 20px;
 }
 
 
 .logo-header {
-  visibility: hidden;
-  height: 40px;
-  width: 70px;
-  padding-left: 0px; /* 100 in MQ*/
+  visibility: visible;
+  height: 20px;
+  width: auto;
+  padding-left: 30px; /* 100 in MQ*/
+  margin-bottom: 80px;
 }
 
 .header-searchbar {
-  padding-top: 0px;
   display: flex;
   justify-content: center;
   width: 50%;
@@ -92,7 +93,6 @@ header {
   display: flex;
   padding-right: 0px; /* 10 in MQ */ 
   align-items: center;
-  padding-left: 10px;
 }
 
 .header-menu {
@@ -100,44 +100,52 @@ header {
 }
 
 .dropbtn {
-  position: absolut;
-  top: 25px;
   padding: 16px;
   font-size: 10px;
   border: none;
   cursor: pointer;
   background: url("/images/avatar.png");
-  height: 65px;
-  width: 65px;
-  margin: 5px;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  margin: 30px 20px 39px 10px;
   background-repeat: no-repeat;
+  outline: none !important;
+}
+
+.dropbtn:active {
+  border: none !important;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
-  width: 100px;
 }
 
 .dropdown-content {
-  margin-top: 40px;
+  top: 100%; 
+  position: absolute;
   display: none;
-  position: relative;
-  background-color: #f9f9f9;
+  background-color: var(--dark-color);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  right: 0;
+  text-align: left;
+  border: none;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+  color: white;
+  font-size: 20px;
+  padding: 20px 16px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1
+  background-color: var(--aqua-color);
+  color: var(--dark-color);
 }
 
 .dropdown:hover .dropdown-content {
@@ -145,6 +153,10 @@ header {
 }
 
 .dropdown-content:hover {
+  display: block;
+}
+
+.dropdown-content.show {
   display: block;
 }
 
@@ -427,27 +439,28 @@ h1 {
 
 .btn-search {
   display: flex;
-  height: 32px;
+  height: 25px;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 12px 0;
   border: none;
+  font-size: 12px;
   font-family: 'Rubik', sans-serif;
   border-radius: 0px;
   cursor: pointer;
   background-color: var(--aqua-color);
+  background-size: contain;
   max-width: 15px; 
   justify-content: center;
   align-items: center;
-  padding-bottom:15px;
 }
 
 
-
 .input-search {
-  height: 32px;
+  height: 25px;
   flex-grow: 1;
-  padding: 12px 20px;
-  margin: 8px 0;
+  padding: 12px 10px;
+  margin: 12px 0;
+  font-size: 14px;
   font-family: 'Rubik', sans-serif;
   box-sizing: border-box;
   border: none;
@@ -482,7 +495,7 @@ h1 {
 #menuToggle {
   display: block;
   position: fixed;
-  top: 50px;
+  top: 60px;
   left: 30px;
   text-align: center;
   z-index: 1;
@@ -788,6 +801,23 @@ footer div:hover {
 
     #menuToggle {
       left: 50px;
+      top: 49px;
+    }
+
+    .header-container {
+      padding: 0px;
+    }
+
+    .logo-header {
+      margin-bottom: 0px;
+      padding-left: 100px;
+    }
+
+    .dropbtn {
+      height: 45px;
+      width: 45px;
+      margin-top: 42px;
+      margin-bottom: 42px;
     }
 
 }
@@ -801,13 +831,25 @@ footer div:hover {
   }
 
   .btn-search {
-    height: 37px;
+    height: 30px;
     max-width: 15px; 
   }
   
   .input-search {
-    height: 37px;
+    height: 30px;
     width: 200px;
+  }
+
+  .dropbtn {
+    height: 55px;
+    width: 55px;
+    margin-top: 37px;
+    margin-bottom: 37px;
+  }
+
+  .logo-header {
+    padding-top: 5px;
+    height: 30px;
   }
 }
 
@@ -839,6 +881,11 @@ footer div:hover {
     width: 250px;
   }
 
+  .logo-header {
+    padding-top: 0px;
+    height: 40px;
+  }
+
 }
 
 
@@ -851,7 +898,12 @@ footer div:hover {
 
   .grid-container21 {
     grid-template-columns: repeat(2, 1fr);
-}
+  }
+
+   .dropbtn {
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
 }
 
 
@@ -872,5 +924,12 @@ footer div:hover {
 
 .input-search {
   width: 300px;
+}
+
+.dropbtn {
+  height: 65px;
+  width: 65px;
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 }
