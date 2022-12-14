@@ -49,6 +49,12 @@
           <div class="col-6">Kategorie:</div>
           <div class="col-6"><%=event.category %></div>
         </div>
+
+        <% if(event.image) { %>
+          <div class="overviewImg">
+            <img class="overviewPartyImage" src="/images/events/<%= event.image %>" />
+          </div>
+          <% } %>
       </div>
     </div>
   </div>

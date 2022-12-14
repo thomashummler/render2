@@ -18,7 +18,9 @@ module.exports.routes = {
  
 
   'POST /event': { controller: 'EventController', action:'create' },
+  'POST /event/pre': { controller: 'EventController', action:'createWithImagePre' },
   'GET /event': { controller: 'EventController', action: 'find' },
+
   'GET /event/create_events': { view:'pages/event/create_events'},
   'GET /event/own_events': { controller: 'EventController', action: 'findOwnEvents'},
   'GET /event/findByCategory': { controller: 'EventController', action: 'findEventsByCategory'},
