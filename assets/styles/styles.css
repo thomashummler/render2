@@ -245,11 +245,6 @@ header {
   padding-right: 20px;
 }
 
-.event-overview .row {
-  color: var(--dark-color);
-  padding: 20px 10px;
-  width: 100%;
-}
 
 
 .homepage-columnflex-container {
@@ -292,16 +287,6 @@ header {
 }
 
 
-.btn-primary {
-  background-color: var(--aqua-color);
-  border: none;
-  color: var(--dark-color);
-}
-
-.btn-secondary {
-  color: var(--dark-color);
-  background-color: var(--grey-color);
-}
 
 
 .create-form {
@@ -696,20 +681,58 @@ h1 {
     padding-bottom: 30px;
   }
 
-  .buttons-show-events {
-    padding-top: 30px;
-  }
-
-
-
 /****************** WELCOME ******************/ 
 
 
+/****************** EVENTDETAILS *****************/
 
+.grid-container-show {
+  padding-top: 160px;
+  height: 200px;
+  background-color: var(--grey-color);
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100%
+}
 
+.grid-container-show p{
+  font-size: 22px;
+}
 
+.container-show-details {
+  border: 2px solid grey;
+  padding: 10px;
+  font-size: 16px;
+  background-color: white;
+}
 
+.container-show-details .col-6 {
+  padding: 10px 0px 10px 20px;
+}
 
+.buttons-show-events {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  padding-top: 30px;
+  text-align: left;
+  gap: calc(50% - 85px);
+}
+
+.btn-primary {
+  text-align: center;
+  font-size: 14px;
+  background-color: var(--aqua-color);
+  border: none;
+  color: var(--dark-color);
+  width: 100px;
+}
+
+.btn-secondary {
+  color: var(--dark-color);
+  background-color: var(--grey-color);
+}
 
 
 
@@ -848,7 +871,7 @@ footer div:hover {
   }
 
   .logo-header {
-    padding-top: 5px;
+    padding-top: 10px;
     height: 30px;
   }
 }
