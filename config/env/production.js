@@ -236,8 +236,6 @@ module.exports = {
 
     onlyAllowOrigins: [
       "https://lido.render.com",
-      "https://example.com",
-      "https://staging.example.com",
     ],
 
     /***************************************************************************
@@ -346,7 +344,6 @@ module.exports = {
    ***************************************************************************/
   custom: {
     baseUrl: "https://lido.render.com",
-    internalEmailAddress: "support@example.com",
 
     // sendgridSecret: 'SG.fake.3e0Bn0qSQVnwb1E4qNPz9JZP5vLZYqjh7sn8S93oSHU',
     // stripeSecret: 'sk_prod__fake_Nfgh82401348jaDa3lkZ0d9Hm',
