@@ -9,12 +9,12 @@
       <h1>Event erstellen</h1>
       <div class="input-container">
         <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-        <input type="text" placeholder="Name" name="name" />
-        <input type="text" placeholder="Beschreibung " name="beschreibung" />
-        <input type="text" placeholder="Stadt" name="stadt" />
-        <input type="number" placeholder="PLZ" name="plz" />
-        <input type="text" placeholder="Straße" name="straße" />
-        <input type="number" placeholder="Hausnummer" name="hausnummer" />
+        <input type="text" placeholder="Name" name="name" maxlength="120"/>
+        <input type="text" placeholder="Beschreibung " name="beschreibung" maxlength="1240"/>
+        <input type="text" placeholder="Stadt" name="stadt" minLength ="1"maxlength="120"/>
+        <input type="number" placeholder="PLZ" name="plz" minLength ="5"maxlength="5" min= "1" max="99999"/>
+        <input type="text" placeholder="Straße" name="straße" maxlength="120"/>
+        <input type="number" placeholder="Hausnummer" name="hausnummer" minlength="1"/>
         <input type="date" placeholder="Datum des Events" name="date" />
         <input type="checkbox" class="checkbox" name="private" />
         <label for="private"> Meine Event soll Privat sein</label><br />
@@ -25,7 +25,6 @@
           <option value="Kultur">Kultur</option>
           <option value="Weiteres">Weiteres</option>
         </select>
-        <input type="file" class="form-control" name="image" />
         <button type="submit" class="submit-button">Hinzufügen</button>
       </div>
     </form>
