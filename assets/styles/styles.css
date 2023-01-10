@@ -370,7 +370,7 @@ h1 {
   color: var(--aqua-color);
 }
 
-
+/*
 .overview-container {
   background-color: var(--grey-color);
   overflow: visible;
@@ -390,7 +390,7 @@ h1 {
   text-align: center;
   background-color: var(--dark-color);
   color: var(--white-color);
-}
+}*/
 
 .overviewPartyImage {
   padding: 0px 5px;
