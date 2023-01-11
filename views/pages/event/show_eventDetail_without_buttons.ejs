@@ -55,9 +55,17 @@
             <img class="overviewPartyImage" src="/images/events/<%= event.image %>" />
           </div>
           <% } %>
+
+          <% if(req.me.isSuperAdmin) { %>
+          <div class="buttons-show-events">
+            <a class="btn btn-primary" href="/event/<%=event.id%>/edit">Aktualisieren</a>
+            <a class="btn btn-primary" href="/event/<%=event.id%>/destroy">Löschen</a>
+          </div>
+          <% } %>
+
       </div>
     </div>
   </div>
   
-  <div class="homepage-columnflex-container"></div>
+
   

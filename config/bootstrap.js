@@ -68,6 +68,7 @@ module.exports.bootstrap = async function() {
 
 
 
+
   // Save new bootstrap version
   await sails.helpers.fs.writeJson.with({
     destination: bootstrapLastRunInfoPath,

@@ -99,14 +99,10 @@ module.exports = {
         private: false,
       });
     }
-
     events.sort((x, y) => y.promotionStatus - x.promotionStatus);
-    
     events;
-    
-
-    
-    res.view("pages/event/overview_events", { events: events  });
+    res.view("pages/event/overview_events", { events: events });
+  
   },
 
   findOne: async function (req, res) {

@@ -11,6 +11,7 @@
 module.exports.policies = {
   '*': 'is-logged-in',
   EventController: {
+    'find':'is-super-admin',
     '*': 'is-logged-in',
       'find': true,
       'findOne': true,
