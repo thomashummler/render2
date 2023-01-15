@@ -5,7 +5,7 @@ module.exports = {
     beschreibung: { type: "string", columnType: "varchar(1240)",maxLength: 1240,required: false },
     stadt: { type: "string", columnType: "varchar(120)",maxLength: 120, required: false },
     straße: { type: "string", columnType: "varchar(120)",maxLength: 120, required: false },
-    plz: { type: "number", required: true, required: false},
+    plz: {  type: "number",  required: false},
     hausnummer: { type: "number", required: false },
     likesanzahl: { type: "number", required: false },
     date: { type: "string", required: false },

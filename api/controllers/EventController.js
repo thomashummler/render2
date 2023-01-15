@@ -43,8 +43,28 @@ module.exports = {
     res.view("pages/event/overview_own_events", { events: events });
   },
 
+  create: async function (req, res) {
+
+    sails.log.debug("Create meal....")
+    req.session.name = req.body.name;
+    req.session.beschreibung = req.body.beschreibung;
+    req.session.stadt = req.body.stadt;
+    req.session.straße = req.body.straße,
+      req.session.plz = req.body.plz,
+      req.session.hausnummer = req.body.hausnummer,
+      req.session.date = req.body.date,
+      res.view('pages/event/overview_createEvents', {
+        eventname: req.param("name"), eventbeschreibung: req.param("beschreibung"),
+        eventstadt: req.param("stadt"), eventhausnummer: req.param("hausnummer"), eventstraße: req.param("stadt"), eventplz: req.param("plz"), eventdate: req.param("date")
+      })
+  },
+
+
+
+
   createWithImage: async function (req, res) {
-    sails.log("Upload image for meal...");
+
+    /*
     let params = {
       dirname: require("path").resolve(
         sails.config.appPath,
@@ -59,30 +79,35 @@ module.exports = {
         sails.log("Uploaded!");
       }
       let fname = require("path").basename(uploadedFiles[0].fd);
-      let privat;
-      privat = req.body.private;
-      if (privat == "on") {
-        privat = true;
-      } else {
-        privat = false;
-      }
-      await Event.create({
-        image: fname,
-        name: req.body.name,
-        beschreibung: req.body.beschreibung,
-        stadt: req.body.stadt,
-        plz: req.body.plz,
-        straße: req.body.straße,
-        hausnummer: req.body.hausnummer,
-        date: req.body.date,
-        private: privat,
-        owner: req.me.id,
-        category: req.body.category,
-      });
+
     };
     await req.file("image").upload(params, callback);
+
+    */
+    let privat;
+    privat = req.body.private;
+    if (privat == "on") {
+      privat = true;
+    } else {
+      privat = false;
+    }
+    await Event.create({
+      name: req.session.name,
+      beschreibung: req.session.beschreibung,
+      stadt: req.session.stadt,
+      straße: req.session.straße,
+      plz: req.session.plz,
+      hausnummer: req.session.hausnummer,
+      date: req.session.date,
+      private: privat,
+      owner: req.me.id,
+      category: req.body.category,
+    //  image: fname,
+
+    });
     return res.redirect("/event");
   },
+
 
   find: async function (req, res) {
     sails.log.debug("List all Events....");
@@ -102,7 +127,7 @@ module.exports = {
     events.sort((x, y) => y.promotionStatus - x.promotionStatus);
     events;
     res.view("pages/event/overview_events", { events: events });
-  
+
   },
 
   findOne: async function (req, res) {
