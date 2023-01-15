@@ -1,88 +1,85 @@
 <div class="grid-container-show">
-    <p>
-      Details zu Ihrem Event
-    </p>
-    <div>
-      <div class="container-show-details">
-
-        <div class="row">
-          <div class="col-6">Name:</div>
-          <div class="col-6">
-            <%= event.name %>
-          </div>
-        </div>
-        <% if(event.image) { %>
-          <div class="overviewImg">
-            <img class="showPartyImage" src="/images/events/<%= event.image %>" />
-          </div>
-          <% } %>
-        <div class="row">
-          <div class="col-6">Beschreibung:</div>
-          <div class="col-6">
-            <%= event.beschreibung %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">Stadt:</div>
-          <div class="col-6">
-            <%=event.stadt %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">PLZ:</div>
-          <div class="col-6">
-            <%=event.plz %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">Straße:</div>
-          <div class="col-6">
-            <%=event.straße %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">Hausnummer:</div>
-          <div class="col-6">
-            <%=event.hausnummer %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">Datum:</div>
-          <div class="col-6">
-            <%=event.date %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">Stadt:</div>
-          <div class="col-6">
-            <%=event.stadt %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-6">private:</div>
-          <div class="col-6">
-            <%=event.private %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">User:</div>
-          <div class="col-6">
-            <%=event.owner %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">Kategorie:</div>
-          <div class="col-6">
-            <%=event.category %>
-          </div>
-        </div>
-        <div class="buttons-show-events">
-          <a class="btn btn-primary" href="/event/<%=event.id%>/edit">Aktualisieren</a>
-          <a class="btn btn-primary" href="/event/<%=event.id%>/destroy">Löschen</a>
-        </div>
+  <h2>
+    Details zu Ihrem Event
+  </h2>
+  <br>
+  <div>
+    <div class="container-show-details">
+      <div class="row">
+        <div class="col-6"> <b>Name:</b> <%= event.name %> </div>
         
       </div>
+      <% if(event.image) { %>
+        <div class="overviewImg">
+          <img class="showPartyImage" src="/images/events/<%= event.image %>" />
+        </div>
+        <% } %>
+          <div class="row">
+            <div class="col-6"><b>Beschreibung:</b></div>
+            <div class="col-6">
+              <%= event.beschreibung %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"><b>Stadt:
+            </b></div>
+            <div class="col-6">
+              <%=event.stadt %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"><b>PLZ:</b></div>
+            <div class="col-6">
+              <%=event.plz %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"><b>Straße:</b></div>
+            <div class="col-6">
+              <%=event.straße %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"><b>Hausnummer:</b></div>
+            <div class="col-6">
+              <%=event.hausnummer %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"><b>Datum:</b></div>
+            <div class="col-6">
+              <%=event.date %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"><b>Stadt:</b></div>
+            <div class="col-6">
+              <%=event.stadt %>
+            </div>
+          </div>
 
+          <div class="row">
+            <div class="col-6"><b>Private Veranstaltung:</b></div>
+            <div class="col-6">
+              <%=event.private %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"><b>Benutzer-ID:</b></bY></div>
+            <div class="col-6">
+              <%=event.owner %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"><b>Kategorie:</b></div>
+            <div class="col-6">
+              <%=event.category %>
+            </div>
+          </div>
+          <div class="buttons-show-events">
+            <a class="btn btn-primary" href="/event/<%=event.id%>/edit">Aktualisieren</a>
+            <a class="btn btn-primary" href="/event/<%=event.id%>/destroy">Löschen</a>
+          </div>
     </div>
+  </div>
 </div>
