@@ -9,12 +9,14 @@
  */
 
 module.exports.policies = {
+  
   '*': 'is-logged-in',
   EventController: {
     'find':'is-super-admin',
     '*': 'is-logged-in',
       'find': true,
       'findOne': true,
+      'createWithImage':true,
   },
  
 
@@ -28,6 +30,7 @@ module.exports.policies = {
   'legal/view-terms': true,
   'legal/view-privacy': true,
   'deliver-contact-form-message': true,
+  
 
 
 

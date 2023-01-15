@@ -1,42 +1,17 @@
 <div class="homepage-columnflex-container">
   <div class="create-events-container">
-    <form
-      action="/eventWithImage"
-      method="post"
-      class="create-form"
-      enctype="multipart/form-data"
-    >
+    <form action="/event/createStep1" method="post" class="create-form" enctype="multipart/form-data">
       <h1>Event erstellen</h1>
       <div class="input-container">
         <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-        <input type="text" placeholder="Name" name="name" maxlength="120"/>
-        <input type="text" placeholder="Beschreibung " name="beschreibung" maxlength="1240"/>
-        <input type="text" placeholder="Stadt" name="stadt" minLength ="1"maxlength="120"/>
-        <input type="number" placeholder="PLZ" name="plz" minLength ="5"maxlength="5" min= "1" max="99999"/>
-        <input type="text" placeholder="Straße" name="straße" maxlength="120"/>
-        <input type="number" placeholder="Hausnummer" name="hausnummer" minlength="1"/>
+        <input type="text" placeholder="Name" name="name" maxlength="120" />
+        <input type="text" placeholder="Beschreibung " name="beschreibung" maxlength="1240" />
+        <input type="text" placeholder="Stadt" name="stadt" minLength="1" maxlength="120" />
+        <input type="number" placeholder="PLZ" name="plz" minLength="5" maxlength="5" min="1" max="99999" />
+        <input type="text" placeholder="Straße" name="straße" maxlength="120" />
+        <input type="number" placeholder="Hausnummer" name="hausnummer" minlength="1" />
         <input type="date" placeholder="Datum des Events" name="date" />
         <br />
-        <br />
-        <br />
-        <label for="private"> Meine Event soll Privat sein</label>
-        
-        <input type="checkbox" class="checkbox" name="private" />  
-        <br />
-        <br />  
-        <label for="category">Such dir eine Kategorie aus falls du möchtest:</label>
-        <select type="text" name="category">
-          <option value="Sport">Sport</option>
-          <option value="Musik">Musik</option>
-          <option value="Kultur">Kultur</option>
-          <option value="Weiteres">Weiteres</option>
-        </select>
-        <br />
-        <br /> 
-        <p>Lade hier ein Bild hoch:</p>
-        <input type="file" class="form-control" name="image" />  
-        <br />
-        <br />   
         <button type="submit" class="submit-button">Hinzufügen</button>
       </div>
     </form>

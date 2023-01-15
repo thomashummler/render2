@@ -1,0 +1,58 @@
+<div class="homepage-columnflex-container">
+    <div class="create-events-container">
+
+
+        <div class="info-container">
+
+            <div class="general-info">
+                <div>
+                    Name : <%= eventname%>
+                </div>
+                <div>
+                    Beschreibung:<%= eventbeschreibung%>
+                </div>
+            </div>
+            <div class="adress-info">
+                <div>
+                    Stadt: <%= eventstadt%>
+                </div>
+
+                <div>
+                    eventplz : <%= eventplz%>
+                </div>
+                <div>
+                    Straße : <%= eventstraße%>
+                </div>
+
+                <div>
+                    Hausnummer : <%= eventhausnummer%>
+                </div>
+            </div>
+        </div>
+        <div class="input-container">
+            <form action="/eventWithImage" method="post" class="create-form" enctype="multipart/form-data">
+                <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+                <br />
+                <label for="private"> Meine Event soll Privat sein</label>
+
+                <input type="checkbox" class="checkbox" name="private" />
+                <br />
+                <br />
+                <label for="category">Such dir eine Kategorie aus falls du möchtest:</label>
+                <select type="text" name="category">
+                    <option value="Sport">Sport</option>
+                    <option value="Musik">Musik</option>
+                    <option value="Kultur">Kultur</option>
+                    <option value="Weiteres">Weiteres</option>
+                </select>
+                <br />
+                <br />
+                <p>Lade hier ein Bild hoch:</p>
+                <input type="file" class="form-control" name="image" />
+                <br />
+                <br />
+                <button type="submit" class="submit-button">Speichern</button>
+        </div>
+        </form>
+    </div>
+</div>
