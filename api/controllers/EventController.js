@@ -64,7 +64,7 @@ module.exports = {
 
   createWithImage: async function (req, res) {
 
-    /*
+    
     let params = {
       dirname: require("path").resolve(
         sails.config.appPath,
@@ -80,31 +80,34 @@ module.exports = {
       }
       let fname = require("path").basename(uploadedFiles[0].fd);
 
+
+      let privat;
+      privat = req.body.private;
+      if (privat == "on") {
+        privat = true;
+      } else {
+        privat = false;
+      }
+      await Event.create({
+        name: req.session.name,
+        beschreibung: req.session.beschreibung,
+        stadt: req.session.stadt,
+        straße: req.session.straße,
+        plz: req.session.plz,
+        hausnummer: req.session.hausnummer,
+        date: req.session.date,
+        private: privat,
+        owner: req.me.id,
+        category: req.body.category,
+        image: fname,
+  
+      });
     };
     await req.file("image").upload(params, callback);
 
-    */
-    let privat;
-    privat = req.body.private;
-    if (privat == "on") {
-      privat = true;
-    } else {
-      privat = false;
-    }
-    await Event.create({
-      name: req.session.name,
-      beschreibung: req.session.beschreibung,
-      stadt: req.session.stadt,
-      straße: req.session.straße,
-      plz: req.session.plz,
-      hausnummer: req.session.hausnummer,
-      date: req.session.date,
-      private: privat,
-      owner: req.me.id,
-      category: req.body.category,
-    //  image: fname,
+    
 
-    });
+    await req.file("image").upload(params, callback);
     return res.redirect("/event");
   },
 

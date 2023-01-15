@@ -71,10 +71,26 @@
         but hey, it's pure CSS magic.
         -->
         <ul id="menu">
-          <a href="#"><li>Sport</li></a>
-          <a href="#"><li>Musik</li></a>
-          <a href="#"><li>Kultur</li></a>
-          <a href="#"><li>Weiteres</li></a>
+          <form action="/event/findByCategory" method="get"  >
+            <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+            <input type ="hidden"value="Kultur" name="category" />
+            <li><button >Kultur</button></li>
+          </form> 
+          <form action="/event/findByCategory" method="get"  >
+            <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+            <input type ="hidden"value="Musik" name="category" />
+            <li><button >Musik</button></li>
+          </form> 
+          <form action="/event/findByCategory" method="get"  >
+            <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+            <input type ="hidden"value="Sport" name="category" />
+            <li><button >Sport</button></li>
+          </form> 
+          <form action="/event/findByCategory" method="get"  >
+            <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+            <input type ="hidden"value="Weiteres" name="category" />
+            <li><button >Weiteres</button></li>
+          </form> 
         </ul>
       </div>
     </nav>
