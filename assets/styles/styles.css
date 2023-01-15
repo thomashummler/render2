@@ -373,7 +373,7 @@ h1 {
 .overview-container {
   background-color: var(--grey-color);
   overflow: visible;
-  position: fixed;
+  padding-top: 160px;
   top: 150px;
   width: 100%;
   height: 100%;
@@ -391,9 +391,12 @@ h1 {
   color: var(--white-color);
 }
 
+.overview-container input {
+  background-color: var(--aqua-color);
+}
+
 .overviewPartyImage {
   padding: 0px 5px;
-  /*position: relative;*/ /* IMAGE*/
   height: 200px;
   width: 100%;
 }
@@ -439,15 +442,6 @@ h1 {
   align-items: center;
 }
 
-.overviewOwnButtons input{
-
-  text-align: center;
-  font-size: 14px;
-  background-color: var(--aqua-color);
-  border: none;
-  color: var(--dark-color);
-  width: 100px;
-}
 
 
 
@@ -461,9 +455,12 @@ h1 {
 .overviewInput {
   position: relative;
   width: 100px;
-  background-color: var(--grey-color);
   text-align: center;
-  justify-content: center;
+  font-size: 14px;
+  background-color: var(--aqua-color);
+  border: none;
+  color: var(--dark-color);
+  width: 100px;
 }
 
 .login{
@@ -709,7 +706,6 @@ h1 {
     padding: 10px;
     background-color: #151515;
     text-align: center;
-    margin: 0px; /* MQ 0 300px*/ 
   }
 
   .homepage-columnflex-container div {
