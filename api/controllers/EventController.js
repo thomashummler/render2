@@ -28,6 +28,7 @@ module.exports = {
       private: "false",
     });
     events;
+    events.sort((x, y) => y.promotionStatus - x.promotionStatus);
     res.view("pages/event/overview_events", { events: events });
   },
 
