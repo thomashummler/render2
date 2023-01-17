@@ -19,8 +19,8 @@ module.exports.routes = {
 
   'POST /event': { controller: 'EventController', action:'create' },
   'GET /event': { controller: 'EventController', action: 'find' },
-   'GET /eventall' : {controller: 'EventController', action: 'findall'},
-   'POST /api/v1/event/promotionUpdat' :{action:'event/promotion-update'},
+  // 'GET /eventall' : {controller: 'EventController', action: 'findall'},
+   'POST /api/v1/event/promotionUpdate' :{action:'event/promotion-update'},
 
 
   'GET /event/create_events': { view:'pages/event/create_events'},

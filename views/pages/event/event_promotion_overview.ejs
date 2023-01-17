@@ -32,7 +32,7 @@
     <div class="moin">
       Hier ist ihr Status : {{Promotion}}
     </div>
-    <button type="submit" class="submit-button"  @click="promote" >Hinzufügen</button>
+    <button type="submit" class="submit-button"  @click="promote(<%= event.id %>)" >Hinzufügen</button>
   </div>
 </div>
 

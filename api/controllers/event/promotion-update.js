@@ -8,9 +8,13 @@ module.exports = {
   
   
     inputs: {
-        newPromotionStatus : {
+        promotionStatus : {
             type: 'number',
             required: true
+        },
+        eventId:{
+            type:"number",
+            required:true
         }
     },
   
@@ -20,13 +24,13 @@ module.exports = {
   
   
     fn: async function (inputs) {
-
-        
-         let eventId = req.session.eventId;
+        console.log(inputs.eventId);
+         let eventId = inputs.eventId;
         console.log(eventId);
          let newPromotionStatus = inputs.promotionStatus;
-        console.log( inputs.promotionStatus);
-        let promotion = await Event.updateOne({ id: eventId }).set({promotionStatus: newPromotionStatus});
+        console.log( inputs.promotionStatus);   
+         await Event.updateOne({ id: eventId }).set({promotionStatus:newPromotionStatus});
+         return {id: eventId};
       }
  };
   

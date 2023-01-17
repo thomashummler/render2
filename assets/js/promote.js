@@ -1,40 +1,27 @@
 parasails.registerPage("promote", {
     data: {
         Promotion: 0,
-        eventId : 0
+        eventId: 0
 
     },
     methods: {
 
-        promote: function () {
+        promote: async function (eventId) {
             const formData = {
-                promotionStatus : this.Promotion
+                promotionStatus: this.Promotion,
+                eventId: eventId,
+                _csrf: window.SAILS_LOCALS._csrf
             }
-            let origin = window.location.origin;
-            let url = new URL(origin + '/api/v1/event/promotionUpdate');
             const body = JSON.stringify(formData);
             console.log(body);
-            const postForm =(body) => {
-                return fetch('/api/v1/reservation/create', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body
-                });
-            }
-            postForm(body)
-                .then(res => res.json())
-                .then(data => {
-                    
-                    let kk = data.promotionStatus;
-                    console.log("kk")
-                })
+            fetch('/api/v1/event/promotionUpdate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body
+            });
         }
-        
-
-
-        
         /*find: function () {
             let origin = window.location.origin;
             let url = new URL(origin + '/eventall');
@@ -46,10 +33,9 @@ parasails.registerPage("promote", {
                         console.log(res)
                     })
                 })
-        },*/
 
-
-
-
+            },*/
     }
+
+
 })
