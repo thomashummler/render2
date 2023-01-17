@@ -45,14 +45,14 @@ module.exports = {
 
   create: async function (req, res) {
 
-    sails.log.debug("Create meal....")
+    sails.log.debug("Create Event....")
     req.session.name = req.body.name;
     req.session.beschreibung = req.body.beschreibung;
     req.session.stadt = req.body.stadt;
     req.session.straße = req.body.straße,
-      req.session.plz = req.body.plz,
-      req.session.hausnummer = req.body.hausnummer,
-      req.session.date = req.body.date,
+    req.session.plz = req.body.plz,
+    req.session.hausnummer = req.body.hausnummer,
+    req.session.date = req.body.date,
       res.view('pages/event/overview_createEvents', {
         eventname: req.param("name"), eventbeschreibung: req.param("beschreibung"),
         eventstadt: req.param("stadt"), eventhausnummer: req.param("hausnummer"), eventstraße: req.param("stadt"), eventplz: req.param("plz"), eventdate: req.param("date")
@@ -64,7 +64,7 @@ module.exports = {
 
   createWithImage: async function (req, res) {
 
-    
+
     let params = {
       dirname: require("path").resolve(
         sails.config.appPath,
@@ -100,17 +100,29 @@ module.exports = {
         owner: req.me.id,
         category: req.body.category,
         image: fname,
-  
+
       });
     };
     await req.file("image").upload(params, callback);
 
-    
+
 
     await req.file("image").upload(params, callback);
     return res.redirect("/event");
   },
+  
+  findall:async function(req,res){
 
+      let sql = "SELECT * FROM event" ;
+      var rawResult = await sails.sendNativeQuery(sql);
+      console.dir(rawResult);
+      let events  = [];
+      rawResult.rows.forEach(element => {
+        console.dir(events);
+        events.push(element);
+      });
+      return res.json(events);
+    },
 
   find: async function (req, res) {
     sails.log.debug("List all Events....");
@@ -130,7 +142,6 @@ module.exports = {
     events.sort((x, y) => y.promotionStatus - x.promotionStatus);
     events;
     res.view("pages/event/overview_events", { events: events });
-
   },
 
   findOne: async function (req, res) {
@@ -145,9 +156,10 @@ module.exports = {
     }
   },
 
-  findCategoryPage: async function (req, res) {
+  findPromotionPage: async function (req, res) {
     sails.log.debug("finding Promotion Site with Event");
     let event = await Event.findOne({ id: req.params.id });
+    req.session.eventId = req.params.id;
     if (req.me.id == event.owner) {
       res.view("pages/event/event_promotion_overview", { event: event });
     } else {

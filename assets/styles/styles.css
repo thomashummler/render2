@@ -17,6 +17,15 @@ body {
 
 /********* GRID LAYOUT *************/ 
 
+#promote{
+position: absolute;
+top:700px;
+height: 500px;
+width: 100%;
+
+
+}
+
 .grid-container431 {
   padding-top: 160px !important;
   display: grid;
