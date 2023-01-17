@@ -900,6 +900,15 @@ option:checked {
   padding-top: 20px;
 }
 
+.block-stepone {
+  display: flex;
+  width: 50%;
+}
+
+.block-stepone div {
+  align-self: flex-start;
+}
+
 .input-container-stepone {
   width: 100%;
 }
