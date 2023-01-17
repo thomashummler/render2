@@ -1,27 +1,36 @@
-<div class="homepage-columnflex-container">
-  <div class="create-events-container">
+<div class="grid-container-show">
+  <div class="container-show-details">
     <form action="/event/<%=event.id%>/update" method="post">
-      <h1>Event bearbeiten</h1>
+      
       <div class="input-container">
-        <input type="hidden" name="_csrf" value="<%= _csrf %>" value=""/> 
-        <input type="text" placeholder="Name" name="name" value="<%= event.name %>"/>
-        <input type="text" placeholder="Beschreibung " name="beschreibung" value="<%= event.beschreibung %>"/>
-        <input type="text" placeholder="Stadt" name="stadt" value="<%= event.stadt %>"/>
-        <input type="number" placeholder="PLZ" name="plz" value="<%= event.plz %>"/>
-        <input type="text" placeholder="Straße" name="straße" value="<%= event.straße %>"/>
-        <input type="number" placeholder="Hausnummer" name="hausnummer" value="<%= event.hausnummer %>"/>
-        <input type="date" placeholder="Datum des Events" name="date" value="<%= event.date %>"/>
-        <input type="checkbox" class="checkbox" name="private" value="<%= event.private %>"/>
-        <label for="private"> Meine Event soll Privat sein</label><br />
-        <label for="category">Such dir eine Kategorie aus falls du möchtest:</label>
-        <select type="text" name="category">
-          <option value="Sport">Sport</option>
-          <option value="Musik">Musik</option>
-          <option value="Kultur">Kultur</option>
-          <option value="Weiteres">Weiteres</option>
-        </select>
-        <input type="file" class="form-control" name="image" value="<%= event.image %>"/>     
-        <button type="submit" class="submit-button">Hinzufügen</button>
+        <h2>Event bearbeiten</h2>
+        <div class="row">
+          <input type="hidden" name="_csrf" value="<%= _csrf %>" value="" />
+        </div>
+        <input type="text" placeholder="Name" name="name" value="<%= event.name %>" />
+        <input type="text" placeholder="Beschreibung " name="beschreibung" value="<%= event.beschreibung %>" />
+        <input type="text" placeholder="Stadt" name="stadt" value="<%= event.stadt %>" />
+        <input type="number" placeholder="PLZ" name="plz" value="<%= event.plz %>" />
+        <input type="text" placeholder="Straße" name="straße" value="<%= event.straße %>" />
+        <input type="number" placeholder="Hausnummer" name="hausnummer" value="<%= event.hausnummer %>" />
+        <input type="date" placeholder="Datum des Events" name="date" value="<%= event.date %>" />
+        <div class="input-checkbox">
+          <input type="checkbox" class="checkbox" name="private" value="<%= event.private %>" />
+          <label for="private"> Mein Event soll privat sein</label><br/>
+        </div>
+        <div class="input-category">
+          <label for="category">Wähle eine Kategorie für dein Event aus:</label>
+          <select type="text" name="category">
+            <option value="Sport">Sport</option>
+            <option value="Musik">Musik</option>
+            <option value="Kultur">Kultur</option>
+            <option value="Weiteres">Weiteres</option>
+          </select>
+        </div>
+        <input type="file" class="form-control" name="image" value="<%= event.image %>" />
+        <div class="input-button">
+          <button type="submit" class="submit-button">Aktualisieren</button>
+        </div>
       </div>
     </form>
   </div>

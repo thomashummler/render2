@@ -6,8 +6,9 @@
   <div>
     <div class="container-show-details">
       <div class="row">
-        <div class="col-6"> <b>Name:</b> <%= event.name %> </div>
-        
+        <div class="col-6"> <b>Name:</b>
+          <%= event.name %>
+        </div>
       </div>
       <% if(event.image) { %>
         <div class="overviewImg">
@@ -22,7 +23,7 @@
           </div>
           <div class="row">
             <div class="col-6"><b>Stadt:
-            </b></div>
+              </b></div>
             <div class="col-6">
               <%=event.stadt %>
             </div>
@@ -65,7 +66,8 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-6"><b>Benutzer-ID:</b></bY></div>
+            <div class="col-6"><b>Benutzer-ID:</b></bY>
+            </div>
             <div class="col-6">
               <%=event.owner %>
             </div>

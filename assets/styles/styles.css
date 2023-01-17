@@ -44,8 +44,6 @@ body {
   padding: 10px;
 }
 
-
-
 .grid-item21 {
   justify-items: center;
   padding:20px 30px;
@@ -64,6 +62,8 @@ body {
 
 
 /********* HEADER ********************/ 
+
+
 
 header {
   background-color: var(--dark-color);
@@ -85,7 +85,6 @@ header {
   position: fixed;
   padding-top: 20px;
 }
-
 
 .logo-header {
   visibility: visible;
@@ -178,7 +177,6 @@ header {
   display: block;
 }
 
-
 .nav-openbtn {
   height: 35;
   background: url("/images/menu.png");
@@ -242,8 +240,6 @@ header {
   background-color: #444;
 }
 
-
-
 .text {
   padding: 10px;
   background-color: #151515;
@@ -262,8 +258,6 @@ header {
   padding-left: 20px;
   padding-right: 20px;
 }
-
-
 
 .homepage-columnflex-container {
   width: 100%;
@@ -295,7 +289,6 @@ header {
   height: auto;
 }
 
-
 .create-events-container {
   padding-top: 170px;
   width: 100%;
@@ -303,9 +296,6 @@ header {
   justify-content: center;
   display: flex;
 }
-
-
-
 
 .create-form {
   height: auto;
@@ -328,12 +318,6 @@ header {
 
 .create-form input{
   height: 40px;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
 .form-control input{
@@ -442,10 +426,6 @@ h1 {
   align-items: center;
 }
 
-
-
-
-
 .overiewForm {
   position: relative;
   height: 100px;
@@ -494,7 +474,6 @@ h1 {
   align-items: center;
 }
 
-
 .input-search {
   height: 25px;
   flex-grow: 1;
@@ -519,7 +498,6 @@ input:focus {
   display: flex; 
   justify-content: center;
 }
-
 
 .promote-columnflex-container{
   position: fixed;
@@ -560,7 +538,6 @@ input:focus {
   color: tomato;
 }
 
-
 #menuToggle input {
   display: block;
   padding-left: 80px;
@@ -569,18 +546,10 @@ input:focus {
   position: absolute;
   margin: 0px  !important;
   cursor: pointer;
-
   opacity: 0;
-  /* hide this */
   z-index: 2;
-  /* and place it over the hamburger */
-
   -webkit-touch-callout: none;
 }
-
-/*
- * Just a quick hamburger
- */
 
 #menuToggle span {
   margin-top: 5px;
@@ -610,30 +579,20 @@ input:focus {
   transform-origin: 0% 100%;
 }
 
-
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
 #menuToggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: var(--aqua-color);
 }
 
-/*
- * hide the middle one.
- */
 #menuToggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-
 #menuToggle input:checked~span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
-
 
 #menu {
   position: fixed;
@@ -646,11 +605,8 @@ input:focus {
   background: var(--dark-color);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
@@ -691,15 +647,13 @@ button:focus {
   background-color: var(--aqua-color);
 }
 
-
-
 #menuToggle input:checked~ul {
   transform: none;
 }
 
 
 
-/************** LANDINGPAGE ******************/
+/************** WELCOME PAGE ******************/
 
 .home-textblock1 {
   padding-top: 50px;
@@ -732,20 +686,18 @@ button:focus {
   
 }
 
+.text {
+  padding: 10px;
+  background-color: #151515;
+  text-align: center;
+}
 
-
-  .text {
-    padding: 10px;
-    background-color: #151515;
-    text-align: center;
-  }
-
-  .homepage-columnflex-container div {
-    text-align: center;
-    padding-bottom: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+.homepage-columnflex-container div {
+  text-align: center;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
   .event-overview {
     width: 100%;
@@ -835,11 +787,135 @@ button:focus {
 }
 
 
+/************ EDIT EVENTS **************/ 
+
+.input-container {
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.input-container h2 {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.input-container input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--dark-color);
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.input-checkbox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-checkbox label{
+  padding-left: 10px;
+}
+
+.input-checkbox .checkbox{
+  height: 20px;
+  width: 20px;
+}
+
+.input-container label {
+  margin: 0px !important;
+}
+
+.input-category {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.input-category select {
+  margin-left: 20px;
+  border: 1px solid var(--dark-color);
+  border-radius: 4px;
+  height: 40px;
+  width: 120px;
+  padding-left: 5px;
+}
+
+.input-category select option:target,
+option:focus,
+option:active,
+option:checked {
+  background-color: white !important;
+}
+
+.input-button {
+  display: flex;
+  justify-content: center;
+}
+
+.input-button button {
+  margin-top: 70px;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.form-control button {
+  background-color: var(--aqua-color) !important;
+}
+
+.input-container .form-control {
+  margin-top: 40px;
+  padding-top: 3px !important;
+}
 
 
+/**************** CREATE EVENTS STEP1 ***********/ 
 
+.create-events-container-stepone {
+  padding-top: 170px;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.info-container {
+  width: 100%;
+  background-color: var(--white-color);
+  padding-left: 40px;
+  padding-top: 20px;
+}
 
+.input-container-stepone {
+  width: 100%;
+}
+
+.input-container-stepone .create-form {
+  background-color: var(--white-color);
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin: 0px !important;
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkbox-stepone {
+  display: flex; 
+  align-items: center;
+}
+
+.checkbox-stepone label {
+  margin: 0px;
+}
+
+.checkbox-stepone input {
+  margin-left: 10px;
+}
 
 
 
@@ -1014,6 +1090,20 @@ footer div:hover {
   #menu button {
     height: 80px; 
   }
+
+  .info-container {
+    width: 50%;
+    background-color: var(--white-color);
+  }
+  
+  .input-container-stepone {
+    width: 50%;
+  }
+
+  .input-container-stepone .create-form {
+    border-left: 1px solid var(--aqua-color);
+  }
+
 }
 
 
