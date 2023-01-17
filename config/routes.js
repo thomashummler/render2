@@ -19,7 +19,7 @@ module.exports.routes = {
 
   'POST /event': { controller: 'EventController', action:'create' },
   'GET /event': { controller: 'EventController', action: 'find' },
-
+   'GET /eventall' : {controller: 'EventController', action: 'findall'},
 
 
   'GET /event/create_events': { view:'pages/event/create_events'},
@@ -27,9 +27,8 @@ module.exports.routes = {
   'POST /eventWithImage': { controller: 'EventController', action:'createWithImage' },
   'GET /event/own_events': { controller: 'EventController', action: 'findOwnEvents'},
   'GET /event/findByCategory': { controller: 'EventController', action: 'findEventsByCategory'},
-
   'GET /event/:id': { controller: 'EventController', action: 'findOne' },
-  'GET /event/promote/:id': { controller: 'EventController', action: 'findCategoryPage' },
+  'GET /event/promote/:id': { controller: 'EventController', action: 'findPromotionPage' },
   'GET /event/:id/edit': { controller: 'EventController', action: 'editOne' },
   'POST /event/:id/promote': { controller: 'EventController', action: 'updatePromotion' },
   'POST /event/:id/update': { controller: 'EventController', action: 'updateOne' },
