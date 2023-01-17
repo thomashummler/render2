@@ -113,11 +113,16 @@ module.exports = {
   
   findall:async function(req,res){
 
-   let events = await Event.find({
-        private: false,
+      let sql = "SELECT * FROM event" ;
+      var rawResult = await sails.sendNativeQuery(sql);
+      console.dir(rawResult);
+      let events  = [];
+      rawResult.rows.forEach(element => {
+        console.dir(events);
+        events.push(element);
       });
-      return events;
-  },
+      return res.json(events);
+    },
 
   find: async function (req, res) {
     sails.log.debug("List all Events....");
@@ -154,6 +159,7 @@ module.exports = {
   findPromotionPage: async function (req, res) {
     sails.log.debug("finding Promotion Site with Event");
     let event = await Event.findOne({ id: req.params.id });
+    req.session.eventId = req.params.id;
     if (req.me.id == event.owner) {
       res.view("pages/event/event_promotion_overview", { event: event });
     } else {

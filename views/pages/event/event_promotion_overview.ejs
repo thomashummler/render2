@@ -10,7 +10,7 @@
     Wer scrollt dein bei einer Website schon ganz nach unten.
   </div>
   <div class="eventId">
-   Die aktuelle EventId lautet <%= event.id %>
+   Die aktuelle EventId lautet <%= event.promotionStatus %>
 
   </div>
  
@@ -21,7 +21,7 @@
     <div>
       <form class="create-form">
         <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-        <select type="text" name="promotionStatus" v-model="Promotion">
+        <select type="text" name="promotionStatus" v-model="Promotion" value="4">
           <option value=0>0</option>
           <option value=1>1</option>
           <option value=2>2</option>
@@ -30,9 +30,9 @@
     </div>
 
     <div class="moin">
-      Hier ist ihr Status{{Promotion}}
+      Hier ist ihr Status : {{Promotion}}
     </div>
-    <button type="submit" class="submit-button"  @click="find" >Hinzufügen</button>
+    <button type="submit" class="submit-button"  @click="promote" >Hinzufügen</button>
   </div>
 </div>
 
