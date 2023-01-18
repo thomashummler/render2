@@ -10,6 +10,8 @@
           <%= event.name %>
         </div>
       </div>
+      <br/>
+      <br/>
       <% if(event.image) { %>
         <div class="overviewImg">
           <img class="showPartyImage" src="/images/events/<%= event.image %>" />
@@ -78,9 +80,9 @@
               <%=event.category %>
             </div>
           </div>
-          <div class="buttons-show-events">
-            <a class="btn btn-primary" href="/event/<%=event.id%>/edit">Bearbeiten</a>
-            <a class="btn btn-primary" href="/event/<%=event.id%>/destroy">Löschen</a>
+          <div class="row">
+            <div class="col-6"><a class="btn btn-primary" href="/event/<%=event.id%>/edit">Bearbeiten</a></div>
+            <div class="col-6"><a class="btn btn-primary" href="/event/<%=event.id%>/destroy">Löschen</a></div>
           </div>
     </div>
   </div>

@@ -1,24 +1,27 @@
-<div class="overview-container">
-  <% events.forEach(function(event){ %>
-    <div>
-      <div class="overviewName">
-        <%= event.name %>
-      </div>
-      <% if(event.image) { %>
-        <div class="overviewImg">
-          <img class="overviewPartyImage" src="/images/events/<%= event.image %>" />
+<div class="plaincontainer">
+  <h2>Übersicht aller Events</h2>
+  <div class="grid-container431">
+    <% events.forEach(function(event){ %>
+      <div class="grid-item431">
+        <div class="overviewName">
+          <%= event.name %>
         </div>
-        <% } %>
-          <div class="overviewData">Datum: <%= event.date %>
+        <% if(event.image) { %>
+          <div class="overviewImg">
+            <img class="overviewPartyImage" src="/images/events/<%= event.image %>" />
           </div>
-          <div class="overviewData">Ort: <%= event.stadt %>
-          </div>
-          <br>
-          <div class="overviewButtons">
-            <form class="overviewForm" action="/event/<%=event.id%>">
-              <input class="overviewInput" type="submit" value="Details" name="detail" />
-            </form>
-          </div>
-    </div>
-    <% }); %>
+          <% } %>
+            <div class="overviewData">Datum: <%= event.date %>
+            </div>
+            <div class="overviewData">Ort: <%= event.stadt %>
+            </div>
+            <br>
+            <div class="overviewButtons">
+              <form class="overviewForm" action="/event/<%=event.id%>">
+                <input class="overviewButton" type="submit" value="Details" name="detail" />
+              </form>
+            </div>
+      </div>
+      <% }); %>
+  </div>
 </div>
