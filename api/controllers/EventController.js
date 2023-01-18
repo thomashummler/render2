@@ -87,13 +87,21 @@ module.exports = {
       } else {
         privat = false;
       }
+      let plz= req.session.plz;
+      let hausnr= req.session.hausnummer;
+      if(plz==""){
+          plz=null;
+      }
+      if(hausnr==""){
+        hausnr=null;
+      }
       await Event.create({
         name: req.session.name,
         beschreibung: req.session.beschreibung,
         stadt: req.session.stadt,
         straße: req.session.straße,
-        plz: req.session.plz,
-        hausnummer: req.session.hausnummer,
+        plz: this.plz,
+        hausnummer: this.hausnr,
         date: req.session.date,
         private: privat,
         owner: req.me.id,
