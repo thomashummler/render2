@@ -11,9 +11,13 @@
           <img class="overviewPartyImage" src="/images/events/<%= event.image %>" />
         </div>
         <% } %>
+        <div class="overviewData">Name: <%= event.name %>
+        </div>
           <div class="overviewData">Datum: <%= event.date %>
           </div>
-          <div class="overviewData">Ort: <%= event.stadt %>
+          <div class="overviewData">Stadt: <%= event.stadt %>
+          </div>
+          <div class="overviewData">Kategorie: <%= event.category %>
           </div>
           <br>
           <div class="overviewOwnButtons">
