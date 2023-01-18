@@ -11,7 +11,7 @@
  *   https://sailsjs.com/anatomy/tasks/config/sails-linker.js
  *
  */
-module.exports = function(grunt) {
+ module.exports = function(grunt) {
 
   grunt.config.set('sails-linker', {
 
@@ -30,9 +30,9 @@ module.exports = function(grunt) {
         appRoot: '.tmp/public'
       },
       files: {
-        '.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
-        'views/**/*.html': require('../pipeline').jsFilesToInject,
-        'views/**/*.ejs': require('../pipeline').jsFilesToInject
+        '.tmp/public/**/*.html': ['.tmp/public/concat/production.js'],
+        'views/**/*.html': ['.tmp/public/concat/production.js'],
+        'views/**/*.ejs': ['.tmp/public/concat/production.js']
       }
     },
 
@@ -61,9 +61,9 @@ module.exports = function(grunt) {
         appRoot: '.tmp/public'
       },
       files: {
-        '.tmp/public/**/*.html': ['.tmp/public/min/production.min.js'],
-        'views/**/*.html': ['.tmp/public/min/production.min.js'],
-        'views/**/*.ejs': ['.tmp/public/min/production.min.js']
+        '.tmp/public/**/*.html': ['.tmp/public/concat/production.js'],
+        'views/**/*.html': ['.tmp/public/concat/production.js'],
+        'views/**/*.ejs': ['.tmp/public/concat/production.js']
       }
     },
 
