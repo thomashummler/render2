@@ -364,7 +364,7 @@ header {
 
 .submit-button {
   height: 64px;
-  width: 100%;
+  width: 250px;
   border-radius: 1000px;
   border: none;
   color: var(--white-color);
@@ -374,9 +374,6 @@ header {
   align-self: center;
 }
 
-.submit-button:hover {
-  width: 200px;
-}
 
 h1 {
   color: var(--aqua-color);
