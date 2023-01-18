@@ -1104,6 +1104,29 @@ option:checked {
   }
 
 
+  /********* IMPRESSUM **********/ 
+  .plaincontainer-impressum {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .container-impressum {
+    background-color: var(--white-color);
+    padding: 100px 50px;
+    border-radius: 4px;
+  }
+
+  .container-impressum h2{
+    padding-bottom: 50px;
+  }
+
+
+
+  /*********** DATENSCHUTZERKLÄRUNG *******/ 
+
+
 
 /*********** FOOTER ****************/
 
@@ -1123,11 +1146,30 @@ footer {
 footer div {
   margin: 15px;
   padding-top: 18px;
+  color: var(--white-color);
 }
 
 footer div:hover {
   color: var(--aqua-color);
 }
+
+.impressum a {
+  color: var(--white-color) !important;
+}
+
+.datenschutzerklärung a {
+  color: var(--white-color) !important;
+}
+
+.impressum a:active {
+  color: var(--aqua-color) !important;
+}
+
+.datenschutzerklärung a:active {
+  color: var(--aqua-color) !important;
+}
+
+
 
 
 /************* MEDIAQUERIES *******************/ 
@@ -1408,6 +1450,11 @@ footer div:hover {
    .dropbtn {
     margin-top: 36px;
     margin-bottom: 36px;
+  }
+
+  .homepage-textblock {
+    padding-left: 25%;
+    padding-right: 25%;
   }
 
 }
