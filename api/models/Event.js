@@ -9,7 +9,7 @@ module.exports = {
     hausnummer: { type: "number", required: false },
     likesanzahl: { type: "number", required: false },
     date: { type: "string", required: false },
-    image: { type: "string", columnType: "varchar(128)", required:false},
+    image: { type: "string", columnType: "varchar(128)", required:true},
     private: { type: "boolean",defaultsTo: false },
     category: {
       type: "string",

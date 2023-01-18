@@ -50,10 +50,10 @@ module.exports = {
     req.session.name = req.body.name;
     req.session.beschreibung = req.body.beschreibung;
     req.session.stadt = req.body.stadt;
-    req.session.straße = req.body.straße,
-    req.session.plz = req.body.plz,
-    req.session.hausnummer = req.body.hausnummer,
-    req.session.date = req.body.date,
+    req.session.straße = req.body.straße;
+    req.session.plz = req.body.plz;
+    req.session.hausnummer = req.body.hausnummer;
+    req.session.date = req.body.date;
       res.view('pages/event/overview_createEvents', {
         eventname: req.param("name"), eventbeschreibung: req.param("beschreibung"),
         eventstadt: req.param("stadt"), eventhausnummer: req.param("hausnummer"), eventstraße: req.param("stadt"), eventplz: req.param("plz"), eventdate: req.param("date")
@@ -64,7 +64,7 @@ module.exports = {
 
 
   createWithImage: async function (req, res) {
-
+  
 
     let params = {
       dirname: require("path").resolve(
@@ -80,8 +80,6 @@ module.exports = {
         sails.log("Uploaded!");
       }
       let fname = require("path").basename(uploadedFiles[0].fd);
-
-
       let privat;
       privat = req.body.private;
       if (privat == "on") {
@@ -101,13 +99,8 @@ module.exports = {
         owner: req.me.id,
         category: req.body.category,
         image: fname,
-
       });
     };
-    await req.file("image").upload(params, callback);
-
-
-
     await req.file("image").upload(params, callback);
     return res.redirect("/event");
   },
