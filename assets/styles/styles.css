@@ -20,6 +20,24 @@ body {
   text-align: center;
 }
 
+.homepage-container {
+  padding: 0px 20px 50px 20px;
+  font-size: 20px;
+}
+
+.homepage-container h1{
+  text-align: center;
+  color: var(--dark-color) !important;
+  padding-bottom: 60px;
+}
+
+.homepage-textblock {
+  font-size: 24px;
+  padding: 30px;
+  background-color: var(--white-color);
+  text-align: center;
+}
+
 
 
 /********* GRID LAYOUT *************/ 
@@ -256,12 +274,6 @@ header {
   background-color: #444;
 }
 
-.text {
-  padding: 10px;
-  background-color: #151515;
-  text-align: center;
-  margin: 0px 50px;
-}
 
 .event-overview {
   width: 100%;
@@ -279,14 +291,8 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  font-size: larger;
-  color: var(--grey-color);
-  background-color: var(--grey-color);
-}
-
-.homepage-columnflex-container div {
-  text-align: center;
-  padding-bottom: 40px;
+  color: var(--dark-color);
+  background-color: var(--white-color);
 }
 
 .homepage-columnflex-container a {
@@ -294,15 +300,12 @@ header {
 }
 
 .party-img {
-  padding-top: 130px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
   height: auto;
-}
-
-.img-block {
-  margin: 0px !important;
-  max-width: 100%;
-  height: auto;
+  background-color: var(--white-color);
 }
 
 .create-events-container {
@@ -359,7 +362,7 @@ header {
 .submit-button {
   height: 64px;
   width: 250px;
-  border-radius: 1000px;
+  border-radius: 4px;
   border: none;
   color: var(--white-color);
   font-size: 22px;
@@ -368,10 +371,6 @@ header {
   align-self: center;
 }
 
-
-h1 {
-  color: var(--aqua-color);
-}
 
 .overview-container {
   background-color: var(--grey-color);
@@ -470,15 +469,6 @@ h1 {
 
 
 
-.login {
-      position: absolute;
-      width:100%;
-      top:130px;
-      height: 100%;
-}
-
-
-
 
 /************ SEARCHBAR **********/
 
@@ -526,6 +516,34 @@ input:focus {
   justify-content: center;
 }
 
+/*********** Login *************/   
+
+.text-center {
+  padding-bottom: 40px;
+}
+
+.text-center h1 {
+  padding-bottom: 40px;
+  color: var(--dark-color) !important;
+}
+
+.container-login {
+  background-color: var(--white-color);
+}
+
+.plaincontainer-login {
+  padding-top: 260px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.login-button {
+  background-color: var(--aqua-color) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  margin-top: 100px;
+}
 
 
 /********** SIDEBAR ***********/
@@ -720,14 +738,6 @@ button:focus {
   height: 350px;
 }
 
-
-.welcome-columnflex-container{
-  position: fixed;
-  top:130px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 .button-block{
   display: flex;
   position: relative;
@@ -748,18 +758,8 @@ button:focus {
   
 }
 
-.text {
-  padding: 10px;
-  background-color: #151515;
-  text-align: center;
-}
 
-.homepage-columnflex-container div {
-  text-align: center;
-  padding-bottom: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
+
 
   .event-overview {
     width: 100%;
@@ -809,7 +809,6 @@ button:focus {
 }
 
 .container-show-details {
-  border: 2px solid grey;
   padding: 10px;
   font-size: 20px;
   background-color: white;
@@ -1027,27 +1026,62 @@ option:checked {
 
 /************** PROMOTION **************/
 
-.promote-columnflex-container{
-  padding-top: 160px;
-  height: 100%;
-  width: 100%;
+.promotion{
+  padding-top: 180px;
+  padding-left: 5%;
+  padding-right: 5%;
   display: flex;
   flex-direction: column;
-  font-size: larger;
   color: var(--dark-color);
   background-color: var(--grey-color);
+  padding-bottom: 100px;
+}
+
+.promotion h2 {
+  padding-bottom: 40px;
+  color: var(--dark-color);
+}
+
+.promotion-container {
+  font-size: 20px;
+  padding: 20px 20px;
+  background-color: var(--white-color);
+  border-radius: 4px;
+}
+
+.promotion-container button {
+  margin-top: 50px;
+}
+
+.promote-button {
+  height: 64px;
+  border-radius: 4px;
+  border: none;
+  color: var(--white-color);
+  font-size: 20px;
+  background-color: var(--aqua-color);
+  transition: 0.2s;
+  align-self: center;
 }
 
 .promotion-form {
   color: var(--dark-color);
+  margin-top: 30px;
+  border: 1px solid var(--dark-color);
+  width: 50%;
+}
+
+.promotion-form select{
+  width: 100%;
 }
 
 #promote {
-  position: absolute;
-  top:700px;
-  height: 500px;
   width: 100%;
   }
+
+  #promote a {
+    color: var(--white-color);
+    }
   
 
 
@@ -1184,6 +1218,22 @@ footer div:hover {
     font-size: 28px;
   }
 
+  .promotion h2 {
+    padding-bottom: 40px;
+    color: var(--dark-color);
+  }
+  
+  .promotion-container {
+    font-size: 24px;
+    padding: 40px 20px;
+    background-color: var(--white-color);
+    border-radius: 4px;
+  }
+
+  .promotion-container button{
+    width: 400px;
+  }
+
     
 
 }
@@ -1196,6 +1246,15 @@ footer div:hover {
 
   .grid-container431 {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .homepage-container h1{
+    font-size: 60px;
+  }
+
+  .plaincontainer-login {
+    padding-left: 20%;
+    padding-right: 20%;
   }
 
   .plaincontainer h2{
@@ -1265,6 +1324,11 @@ footer div:hover {
 
   .plaincontainer h2 {
     padding-left: 60px;
+  }
+
+  .promotion{
+    padding-left: 15%;
+    padding-right: 15%;
   }
 
 

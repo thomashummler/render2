@@ -1,16 +1,29 @@
 <%- exposeLocalsToBrowser() %>
-
-  <div class="promote-columnflex-container">
+<div class="promotion">
+  <h2>Promoten Sie jetzt ganz einfach Ihr Event!</h2>
+  <div class="promotion-container">
     <div>
-      Auf dieser Seite können Sie von Ihnen selbst erstellte Promoten! <br>
-      Was heißt promoten?<br>
-      Je nachdem welche Promotionsstufe Sie wählen, werden von Ihnen erstelle Events weiteroben angezeigt!<br>
-      Umso höher die Promotionstufe ihres Events ist, desto stärker wird ihr Event auch wahrgenommen. <br>
-      Wer scrollt dein bei einer Website schon ganz nach unten.
+      Auf dieser Seite können Sie ihr ausgewähltes Event mit einem einfachen Klick promoten. 
+      <br/>
+      <br/>
+      Aber was ist denn genau mit promoten gemeint?<br/>
+      <br/>
+      Je nachdem welche Promotionsstufe sie auswählen, werden von Ihnen erstelle Events auf der Übersichtsseite weiter oben angezeigt!<br>
+      Je höher nun also die Promotionstufe ihres Events ist, desto stärker wird ihr Event auch wahrgenommen. <br>
+      Denn sind wir mal ehrlich, wer scrollt denn schon bei einer Website immer ganz nach unten? 
+      <br/>
+      <br/>
+      Dabei unterscheiden sich die Promotionsstufen nur von ihrem Preis, je höher die Stufe, desto mehr kostet die Promotion. 
     </div>
+    <br/>
+    <br/>
+    <br/>
     <div class="eventId">
-      Die aktuelle EventId lautet <%= event.promotionStatus %>
+      Ihre aktuelle Promotionsstufe für dieses Event ist: <%= event.promotionStatus %>
     </div>
+    <br/>
+    <br/>
+    Wählen Sie folgend einfach Ihre gewünschte Promotionsstufe aus:
     <div id="promote">
       <div>
         <form class="promotion-form">
@@ -22,9 +35,8 @@
             <option value=3>3</option>
           </select>
       </div>
-      <div class="promotion-status">
-        Hier ist ihr Status : {{Promotion}}
-      </div>
-      <button type="submit" class="submit-button" @click="promote(<%= event.id %>)">Hinzufügen</button>
+      <button type="submit" class="promote-button" @click="promote(<%= event.id %>)"> <a href="/event/own_events">Jetzt Promotions-Level {{Promotion}} auswählen</a></button>
     </div>
   </div>
+</div>
+ 
