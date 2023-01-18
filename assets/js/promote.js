@@ -13,7 +13,6 @@ parasails.registerPage("promote", {
                 _csrf: window.SAILS_LOCALS._csrf
             }
             const body = JSON.stringify(formData);
-            console.log(body);
             fetch('/api/v1/event/promotionUpdate', {
                 method: 'POST',
                 headers: {

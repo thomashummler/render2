@@ -13,21 +13,22 @@ module.exports.routes = {
   //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
   //  ║║║║╣ ╠╩╗╠═╝╠═╣║ ╦║╣ ╚═╗
   //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
-  'GET /':                   { action: 'view-homepage-or-redirect' },
-  'GET /welcome/:unused?':   { action: 'dashboard/view-welcome' },
- 
+  'GET /': { action: 'view-homepage-or-redirect' },
+  'GET /welcome/:unused?': { action: 'dashboard/view-welcome' },
 
-  'POST /event': { controller: 'EventController', action:'create' },
+
+  'POST /event': { controller: 'EventController', action: 'create' },
   'GET /event': { controller: 'EventController', action: 'find' },
   // 'GET /eventall' : {controller: 'EventController', action: 'findall'},
-   'POST /api/v1/event/promotionUpdate' :{action:'event/promotion-update'},
+  'POST /api/v1/event/promotionUpdate': { action: 'event/promotion-update' },
 
 
-  'GET /event/create_events': { view:'pages/event/create_events'},
-  'POST /event/createStep1': { controller: 'EventController', action: 'create'},
-  'POST /eventWithImage': { controller: 'EventController', action:'createWithImage' },
-  'GET /event/own_events': { controller: 'EventController', action: 'findOwnEvents'},
-  'GET /event/findByCategory': { controller: 'EventController', action: 'findEventsByCategory'},
+  'GET /event/create_events': { view: 'pages/event/create_events' },
+  'GET /viewDatenschutz' :{view: 'pages/legal/datenschutzerklärung'},
+  'POST /event/createStep1': { controller: 'EventController', action: 'create' },
+  'POST /eventWithImage': { controller: 'EventController', action: 'createWithImage' },
+  'GET /event/own_events': { controller: 'EventController', action: 'findOwnEvents' },
+  'GET /event/findByCategory': { controller: 'EventController', action: 'findEventsByCategory' },
   'GET /event/:id': { controller: 'EventController', action: 'findOne' },
   'GET /event/promote/:id': { controller: 'EventController', action: 'findPromotionPage' },
   'GET /event/:id/edit': { controller: 'EventController', action: 'editOne' },
@@ -36,29 +37,28 @@ module.exports.routes = {
   'GET /event/:id/destroy': { controller: 'EventController', action: 'destroyOne' },
 
 
-  'GET /faq':                { action:   'view-faq' },
-  'GET /legal/terms':        { action:   'legal/view-terms' },
-  'GET /legal/privacy':      { action:   'legal/view-privacy' },
-  'GET /contact':            { action:   'view-contact' },
+  'GET /faq': { action: 'view-faq' },
+  'GET /legal/impressum': { action: 'legal/view-impressum' },
+  'GET /contact': { action: 'view-contact' },
 
-  'GET /signup':             { action: 'entrance/view-signup' },
-  'GET /email/confirm':      { action: 'entrance/confirm-email' },
-  'GET /email/confirmed':    { action: 'entrance/view-confirmed-email' },
+  'GET /signup': { action: 'entrance/view-signup' },
+  'GET /email/confirm': { action: 'entrance/confirm-email' },
+  'GET /email/confirmed': { action: 'entrance/view-confirmed-email' },
 
-  'GET /login':              { action: 'entrance/view-login' },
-  'GET /password/forgot':    { action: 'entrance/view-forgot-password' },
-  'GET /password/new':       { action: 'entrance/view-new-password' },
+  'GET /login': { action: 'entrance/view-login' },
+  'GET /password/forgot': { action: 'entrance/view-forgot-password' },
+  'GET /password/new': { action: 'entrance/view-new-password' },
 
-  'GET /account':            { action: 'account/view-account-overview' },
-  'GET /account/password':   { action: 'account/view-edit-password' },
-  'GET /account/profile':    { action: 'account/view-edit-profile' },
+  'GET /account': { action: 'account/view-account-overview' },
+  'GET /account/password': { action: 'account/view-edit-password' },
+  'GET /account/profile': { action: 'account/view-edit-profile' },
 
 
   //  ╔╦╗╦╔═╗╔═╗  ╦═╗╔═╗╔╦╗╦╦═╗╔═╗╔═╗╔╦╗╔═╗   ┬   ╔╦╗╔═╗╦ ╦╔╗╔╦  ╔═╗╔═╗╔╦╗╔═╗
   //  ║║║║╚═╗║    ╠╦╝║╣  ║║║╠╦╝║╣ ║   ║ ╚═╗  ┌┼─   ║║║ ║║║║║║║║  ║ ║╠═╣ ║║╚═╗
   //  ╩ ╩╩╚═╝╚═╝  ╩╚═╚═╝═╩╝╩╩╚═╚═╝╚═╝ ╩ ╚═╝  └┘   ═╩╝╚═╝╚╩╝╝╚╝╩═╝╚═╝╩ ╩═╩╝╚═╝
-  '/terms':                   '/legal/terms',
-  '/logout':                  '/api/v1/account/logout',
+  '/terms': '/legal/terms',
+  '/logout': '/api/v1/account/logout',
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
@@ -72,15 +72,15 @@ module.exports.routes = {
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
   // Note that, in this app, these API endpoints may be accessed using the `Cloud.*()` methods
   // from the Parasails library, or by using those method names as the `action` in <ajax-form>.
-  '/api/v1/account/logout':                           { action: 'account/logout' },
-  'PUT   /api/v1/account/update-password':            { action: 'account/update-password' },
-  'PUT   /api/v1/account/update-profile':             { action: 'account/update-profile' },
-  'PUT   /api/v1/account/update-billing-card':        { action: 'account/update-billing-card' },
-  'PUT   /api/v1/entrance/login':                        { action: 'entrance/login' },
-  'POST  /api/v1/entrance/signup':                       { action: 'entrance/signup' },
+  '/api/v1/account/logout': { action: 'account/logout' },
+  'PUT   /api/v1/account/update-password': { action: 'account/update-password' },
+  'PUT   /api/v1/account/update-profile': { action: 'account/update-profile' },
+  'PUT   /api/v1/account/update-billing-card': { action: 'account/update-billing-card' },
+  'PUT   /api/v1/entrance/login': { action: 'entrance/login' },
+  'POST  /api/v1/entrance/signup': { action: 'entrance/signup' },
   'POST  /api/v1/entrance/send-password-recovery-email': { action: 'entrance/send-password-recovery-email' },
-  'POST  /api/v1/entrance/update-password-and-login':    { action: 'entrance/update-password-and-login' },
-  'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
-  'POST  /api/v1/observe-my-session':                 { action: 'observe-my-session', hasSocketFeatures: true },
+  'POST  /api/v1/entrance/update-password-and-login': { action: 'entrance/update-password-and-login' },
+  'POST  /api/v1/deliver-contact-form-message': { action: 'deliver-contact-form-message' },
+  'POST  /api/v1/observe-my-session': { action: 'observe-my-session', hasSocketFeatures: true },
 
 };

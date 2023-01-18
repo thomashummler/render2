@@ -27,8 +27,7 @@ module.exports.policies = {
   'view-homepage-or-redirect': true,
   'view-faq': true,
   'view-contact': true,
-  'legal/view-terms': true,
-  'legal/view-privacy': true,
+  'legal/view-impressum': true,
   'deliver-contact-form-message': true,
   
 
