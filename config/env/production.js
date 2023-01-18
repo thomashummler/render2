@@ -19,7 +19,7 @@
  * https://sailsjs.com/docs/concepts/deployment
  */
 
-module.exports = {
+ module.exports = {
   /**************************************************************************
    *                                                                         *
    * Tell Sails what database(s) it should use in production.                *
@@ -74,7 +74,7 @@ module.exports = {
        * https://sailsjs.com/config/datastores                                     *
        *                                                                           *
        ****************************************************************************/
-      // ssl: { rejectUnauthorized: true },
+      //ssl: { rejectUnauthorized: true },
     },
   },
 
@@ -208,7 +208,7 @@ module.exports = {
      *                                                                          *
      ***************************************************************************/
     cookie: {
-      // secure: true,
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000, // 24 hours
     },
   },
@@ -235,7 +235,8 @@ module.exports = {
      ***************************************************************************/
 
     onlyAllowOrigins: [
-      "https://lido.render.com",
+      "https://example.com",
+      "https://render-evently.onrender.com",
     ],
 
     /***************************************************************************
@@ -343,7 +344,7 @@ module.exports = {
    *                                                                         *
    ***************************************************************************/
   custom: {
-    baseUrl: "https://lido.render.com",
+    baseUrl: "https://render-evently.onrender.com",
 
     // sendgridSecret: 'SG.fake.3e0Bn0qSQVnwb1E4qNPz9JZP5vLZYqjh7sn8S93oSHU',
     // stripeSecret: 'sk_prod__fake_Nfgh82401348jaDa3lkZ0d9Hm',

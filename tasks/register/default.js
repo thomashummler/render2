@@ -12,7 +12,7 @@
  *   https://sailsjs.com/anatomy/tasks/register/default.js
  *
  */
-module.exports = function (grunt) {
+ module.exports = function (grunt) {
 
 
   grunt.registerTask('default', [
