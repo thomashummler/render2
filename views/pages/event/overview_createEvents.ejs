@@ -1,29 +1,45 @@
 <div class="create-events-container-stepone">
     <div class="info-container">
-        <div class="general-info">
-            <div class="block-stepone">
-                <b>Name: </b>
-                <%= eventname%>
+        <div class="row">
+            <div class="col-6"> <b>Name:</b>
             </div>
-            <div class="block-stepone">
-                <b>Beschreibung: </b>
+            <div class="col-6">
+                <%= eventname %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6"> <b>Beschreibung:</b>
+            </div>
+            <div class="col-6">
                 <%= eventbeschreibung%>
             </div>
-            <div class="block-stepone">
-                <b>Stadt: </b>
-                <%= eventstadt%>
+        </div>
+        <div class="row">
+            <div class="col-6"> <b>Stadt:</b>
             </div>
-            <div class="block-stepone">
-                <b>PLZ: </b>
+            <div class="col-6">
+                <%= eventname %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6"> <b>PLZ:</b>
+            </div>
+            <div class="col-6">
                 <%= eventplz%>
             </div>
-            <div class="block-stepone">
-                <b>Straße: </b>
+        </div>
+        <div class="row">
+            <div class="col-6"> <b>Straße:</b>
+            </div>
+            <div class="col-6">
                 <%= eventstraße%>
             </div>
-            <div class="block-stepone">
-                <b>Hausnummer: </b>
-                <div><%= eventhausnummer%></div>
+        </div>
+        <div class="row">
+            <div class="col-6"> <b>Hausnummer:</b>
+            </div>
+            <div class="col-6">
+                <%= eventhausnummer%>
             </div>
         </div>
     </div>
@@ -32,24 +48,28 @@
             <input type="hidden" name="_csrf" value="<%= _csrf %>" />
             <br />
             <div class="checkbox-stepone">
-                <label for="private">Mein Event soll privat sein</label>
+                <label for="private"><b>Mein Event soll privat sein</b></label>
                 <input type="checkbox" class="checkbox" name="private" />
             </div>
             <br />
             <br />
-            <label for="category">Such dir eine Kategorie aus falls du möchtest:</label>
-            <select type="text" name="category">
-                <option value="Sport">Sport</option>
-                <option value="Musik">Musik</option>
-                <option value="Kultur">Kultur</option>
-                <option value="Weiteres">Weiteres</option>
-            </select>
+            <div class="stepone-category">
+                <label for="category"> <b>Wähle eine Kategorie für dein Event aus:</b></label>
+                <select type="text" name="category">
+                    <option value="Sport">Sport</option>
+                    <option value="Musik">Musik</option>
+                    <option value="Kultur">Kultur</option>
+                    <option value="Weiteres">Weiteres</option>
+                </select>
+            </div>
             <br />
             <br />
-            <p>Lade hier ein Bild hoch:</p>
-            <input type="file" class="form-control" name="image" />
-            <br />
-            <br />
+            <div class="stepone-picture">
+                <p><b>Lade hier ein Bild hoch:</b></p>
+                <input type="file" class="form-control" name="image" />
+                <br />
+                <br />
+            </div>
             <button type="submit" class="submit-button">Speichern</button>
     </div>
     </form>

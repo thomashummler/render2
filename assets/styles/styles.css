@@ -15,6 +15,12 @@ body {
   padding-top: 170px;
 }
 
+.plaincontainer h2{
+  padding-left: 40px;
+}
+
+
+
 /********* GRID LAYOUT *************/ 
 
 #promote{
@@ -22,12 +28,10 @@ position: absolute;
 top:700px;
 height: 500px;
 width: 100%;
-
-
 }
 
 .grid-container431 {
-  padding-top: 160px !important;
+  padding-top: 50px !important;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
@@ -55,7 +59,7 @@ width: 100%;
 
 .grid-item21 {
   justify-items: center;
-  padding:20px 30px;
+  padding: 40px 30px 60px 30px;
   background-color: white;
   margin-bottom: 20px;
   font-size: 16px;
@@ -64,8 +68,8 @@ width: 100%;
 }
 
 .grid-item21 p{
-  font-size: 16px;
-  padding:10px 30px;
+  font-size: 18px;
+  padding:20px 0px;
 }
 
 
@@ -308,16 +312,16 @@ header {
 
 .create-form {
   height: auto;
-  width: 100%;
   padding: 40px;
   padding-top: 10px;
-  border-radius: 8px;
-  background-color: var(--dark-color);
+  border-radius: 4px;
+  background-color: var(--white-color);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   border-radius: 10px;
+  width: 100%;
 }
 
 .create-form h1{
@@ -327,6 +331,7 @@ header {
 
 .create-form input{
   height: 40px;
+  border: 1px solid var(--dark-color);
 }
 
 .form-control input{
@@ -335,7 +340,7 @@ header {
 
 .create-events-container input {
   width: auto;
-  margin: 15px;
+  margin: 15px 0px 15px 0px;
   padding: 0px 25px;
   border-radius: 10px;
   border: none;
@@ -343,16 +348,22 @@ header {
   transition: 0.2s;
 }
 
+.input-container-create {
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
 
 .submit-button {
   height: 64px;
-  width: 140px;
+  width: 100%;
   border-radius: 1000px;
   border: none;
   color: var(--white-color);
   font-size: 22px;
   background-color: var(--aqua-color);
   transition: 0.2s;
+  align-self: center;
 }
 
 .submit-button:hover {
@@ -668,6 +679,54 @@ button:focus {
   padding-top: 50px;
 }
 
+.item-1 h2 {
+  background-color: var(--grey-color);
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.item-2 h2 {
+  background-color: var(--grey-color);
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.item-1 img {
+  width: 100%;
+  height: auto;
+}
+
+.item-1 {
+  height: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.item-2 {
+  height: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.item-2 img {
+  width: 100%;
+  height: auto;
+}
+
+.text-container1 {
+  height: 350px;
+}
+
+
 .welcome-columnflex-container{
   position: fixed;
   top:130px;
@@ -735,6 +794,7 @@ button:focus {
   }
 
 /****************** WELCOME ******************/ 
+
 
 
 /****************** EVENTDETAILS *****************/
@@ -884,6 +944,7 @@ option:checked {
 /**************** CREATE EVENTS STEP1 ***********/ 
 
 .create-events-container-stepone {
+  font-size: 20px;
   padding-top: 170px;
   width: 100%;
   padding-left: 10%;
@@ -896,22 +957,25 @@ option:checked {
 .info-container {
   width: 100%;
   background-color: var(--white-color);
-  padding-left: 40px;
   padding-top: 20px;
-}
-
-.block-stepone {
-  display: flex;
-  width: 50%;
-}
-
-.block-stepone div {
-  align-self: flex-start;
 }
 
 .input-container-stepone {
   width: 100%;
 }
+
+.info-container .row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0px;
+}
+
+.info-container .col-6 {
+  padding: 0px;
+}
+
 
 .input-container-stepone .create-form {
   background-color: var(--white-color);
@@ -927,13 +991,44 @@ option:checked {
   align-items: center;
 }
 
+.checkbox-stepone input{
+  display: flex; 
+  align-items: center;
+  margin-left: 10px;
+}
+
+.checkbox-stepone input.checkbox{
+  background-color: var(--aqua-color);
+}
+
 .checkbox-stepone label {
   margin: 0px;
 }
 
-.checkbox-stepone input {
-  margin-left: 10px;
+.stepone-category {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
+
+.stepone-category label {
+  margin: 0px 0px 30px 0px;
+}
+
+.stepone-category select {
+  border: 1px solid var(--dark-color);
+}
+
+.stepone-picture p {
+  margin-bottom: 10px;
+}
+
+.stepone-picture .form-control {
+  padding: 4px 0px 5px 5px;
+}
+
+
+
 
 
 
@@ -949,9 +1044,12 @@ option:checked {
   /******************** BUTTONS ***********************/ 
 
   .event-button button{
+    padding: 10px 5px;
+    margin-bottom: 50px;
+    border-radius: 4px;
     background-color: var(--aqua-color);
     color: white;
-    width: 150px;
+    width: 200px;
     border: 1px solid white;
     align-self: center;
   }
@@ -1050,18 +1148,45 @@ footer div:hover {
     }
 
     .create-form {
-      width: auto;
+      width: 80%;
     }
 
     .create-events-container input {
       width: auto;
-      margin: 15px;
+      margin: 15px 0px 15px 0px;
       padding: 0px 25px;
-      border-radius: 10px;
+      border-radius: 4px;
       border: none;
       background-color: var(--grey-color);
       transition: 0.2s;
     }
+
+    .text-container1 {
+      height: 300px;
+    }
+
+    .item-1 {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    .item-2 {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    
+  .item-1 h2 {
+    margin-bottom: 32px;
+    font-size: 28px;
+  }
+  
+  .item-2 h2 {
+    margin-bottom: 32px;
+    font-size: 28px;
+  }
+
+    
 
 }
 
@@ -1101,10 +1226,6 @@ footer div:hover {
     padding-right: 25%;
   }
 
-  .grid-item21 p{
-    font-size: 22px;
-  }
-
   #menu button {
     height: 80px; 
   }
@@ -1120,7 +1241,23 @@ footer div:hover {
 
   .input-container-stepone .create-form {
     border-left: 1px solid var(--aqua-color);
+    width: 100%;
   }
+
+  .create-form {
+    width: 60%;
+  }
+
+  
+  .text-container1 {
+    height: 400px;
+  }
+
+  .text-container1 p{
+    padding-top: 60px;
+    font-size: 24px;
+  }
+
 
 }
 
@@ -1134,12 +1271,10 @@ footer div:hover {
     }
 
     .grid-container21 {
+      padding: 0px 100px;
       grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-item21 {
-    height: 400px;
-}
 
 
   #menu {
@@ -1177,6 +1312,10 @@ footer div:hover {
     width: 120px;
     height: 40px;
     font-size: 18px;
+  }
+
+  .text-container1 {
+    height: 500px;
   }
 
 }
