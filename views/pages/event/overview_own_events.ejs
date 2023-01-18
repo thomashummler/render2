@@ -1,5 +1,5 @@
 <div class="plaincontainer">
-  <h2> Übersicht Ihrer Events: </>
+  <h2>Übersicht Ihrer Events</h2>
 <div class="grid-container431">
   <% events.forEach(function(event){ %>
     <div class="grid-item431">
@@ -18,10 +18,10 @@
           <br>
           <div class="overviewOwnButtons">
             <form class="overviewForm" action="/event/<%=event.id%>">
-              <input class="overviewOwnButton" type="submit" value="Details" name="detail" />
+              <input class="overviewOwnButton" type="submit" value="Eventdetails" name="detail" />
             </form>
             <form class="overviewForm" action="/event/promote/<%=event.id%>">
-              <input class="overviewOwnButton" type="submit" value="Promote" name="detail " />
+              <input class="overviewOwnButton" type="submit" value="Jetzt Promoten" name="detail " />
             </form>
           </div>
     </div>
