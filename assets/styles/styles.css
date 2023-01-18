@@ -29,9 +29,9 @@ body {
   padding-top: 50px !important;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  width: 100%;
-  grid-gap: 0px;
+  min-height: 300px;
   padding: 0px 20px;
+  grid-gap: 50px 20px;
   color: var(--dark-color);
   font-size: 22px;
   justify-items: center;
@@ -42,6 +42,7 @@ body {
   background-color: white;
   margin-bottom: 20px;
   padding: 0px 20px;
+  gap: 20px 20px;
   max-width: 100%;
   font-size: 16px;
   padding-bottom: 20px;
@@ -394,9 +395,10 @@ h1 {
 .overviewPartyImage {
   display: flex;
   justify-content: center;
-  max-height: 300px;
+  height: 300px;
   width: 100%;
   margin: auto;
+  aspect-ratio: 1/1;
 }
 
 
@@ -424,7 +426,7 @@ h1 {
 }
 
 .overviewButtons {
-  width: 100%;
+  min-width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -1053,16 +1055,6 @@ option:checked {
 
 
 
-
-
-
-
-
-
-
-
-
-
   /******************** BUTTONS ***********************/ 
 
   .event-button button {
@@ -1111,7 +1103,7 @@ footer div:hover {
 @media (min-width: 640px) {
     .grid-container431 {
         grid-template-columns: repeat(1, 1fr);
-        grid-gap: 100px 0px;
+        grid-gap: 70px 20px;
     }
 
 
