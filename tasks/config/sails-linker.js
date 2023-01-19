@@ -30,13 +30,11 @@
         appRoot: '.tmp/public'
       },
       files: {
-        '.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
-        'views/**/*.html': require('../pipeline').jsFilesToInject,
-        'views/**/*.ejs': require('../pipeline').jsFilesToInject
+     
         
-       // '.tmp/public/**/*.html': ['.tmp/public/concat/production.js'],
-        //'views/**/*.html': ['.tmp/public/concat/production.js'],
-        //'views/**/*.ejs': ['.tmp/public/concat/production.js']
+        '.tmp/public/**/*.html': ['.tmp/public/concat/production.js'],
+        'views/**/*.html': ['.tmp/public/concat/production.js'],
+        'views/**/*.ejs': ['.tmp/public/concat/production.js']
         
       }
     },

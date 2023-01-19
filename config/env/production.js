@@ -208,7 +208,7 @@
      *                                                                          *
      ***************************************************************************/
     cookie: {
-      //secure: true,
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000, // 24 hours
     },
   },
@@ -235,9 +235,9 @@
      ***************************************************************************/
 
     onlyAllowOrigins: [  
-      "https://lido.render.com",
-     // "https://example.com",
-      //"https://render-evently.onrender.com",
+     
+      "https://example.com",
+      "https://render-evently.onrender.com",
     ],
 
     /***************************************************************************
