@@ -62,6 +62,7 @@ module.exports.bootstrap = async function() {
   await User.createEach([
     { emailAddress: 'admin@example.com', fullName: 'Ryan Dahl', isSuperAdmin: true, password: await sails.helpers.passwords.hashPassword('abc123') },
     { emailAddress: 'maurice.mustermann@example.com', fullName: 'Maurice Mustermann', isSuperAdmin: false, password: await sails.helpers.passwords.hashPassword('evently') },
+    { emailAddress: 'karl.mustermann@example.com', fullName: 'Karl Mustermann', isSuperAdmin: false, password: await sails.helpers.passwords.hashPassword('evently') },
   ]);
   
   // Save new bootstrap version
