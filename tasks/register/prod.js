@@ -16,6 +16,8 @@
     'compileAssets',
     'concat',
    // 'uglify',
+   'polyfill:prod',
+   'babel', 
     'cssmin',
     'sails-linker:prodJs',
     'sails-linker:prodStyles',
